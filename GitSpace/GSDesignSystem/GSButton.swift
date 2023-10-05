@@ -79,6 +79,35 @@ private extension GSButton {
         init(_ style: Style) {
             self.style = style
         }
+        
+        // MARK: - Method
+        func body(content: Content) -> some View {
+            switch style {
+            case let primary(isDisabled):
+                content
+                    .font(
+                        .system(size: 14, weight: .semibold)
+                    )
+                    .foregroundColor(.black)
+                    .padding(.horizontal, 34)
+                    .padding(.vertical, 18)
+                    .frame(minWidth: 150)
+                    .background(Color.gsGreenPrimary)
+                    .cornerRadius(30)
+                    .overlay {
+                        if isDisabled { Color.clear }
+                    }
+                
+            case let secondary(isDisabled):
+                
+            case tag:
+                
+            case plain:
+                
+            case tab:
+                
+            }
+        }
     }
 }
 }
