@@ -16,3 +16,19 @@ struct GSButton<Label: View>: View {
         case plain
         case tab
     }
+    
+    let style: Style
+    let action: () -> Void
+    let label: Label
+    
+    init(
+        style: Style,
+        action: @escaping () -> Void,
+        @ViewBuilder label: () -> Label
+    ) {
+        self.style = style
+        self.action = action
+        self.label = label()
+    }
+    
+}
