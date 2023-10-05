@@ -31,4 +31,23 @@ struct GSButton<Label: View>: View {
         self.label = label()
     }
     
+    var body: some View {
+        Button(action: action) {
+            label
+                .modifier(
+                    GSButtonLabelModifier(style)
+                )
+        }
+    }
+private extension GSButton {
+    struct GSButtonLabelModifier: ViewModifier {
+        // MARK: -Property
+        let style: Style
+        
+        // MARK: -Initializer
+        init(_ style: Style) {
+            self.style = style
+        }
+    }
+}
 }
