@@ -1,12 +1,3 @@
----
-name: Pull Request
-about: 구현 기능에 대한 PR입니다.
-title: "[Feat] "
-labels: "✨ Feature"
-assignees: ''
-
----
-
 ## 개요
 <!-- 무슨 이유로 코드를 변경했는지
 어떤 위험이나 장애가 발견되었는지
