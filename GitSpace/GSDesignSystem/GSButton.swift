@@ -102,6 +102,18 @@ private extension GSButton {
                 
             case let .secondary(isDisabled):
                 content
+                    .font(
+                        .system(size: 14, weight: .semibold)
+                    )
+                    .foregroundColor(isDisabled ? .white : .black)
+                    .padding(.horizontal, 23)
+                    .padding(.vertical, 13)
+                    .frame(minWidth: 80)
+                    .background(isDisabled ? Color.gsGray1 : Color.gsGreenPrimary)
+                    .cornerRadius(20)
+                    .overlay {
+                        if isDisabled { Color.clear }
+                    }
                 
             case .tag:
                 content
