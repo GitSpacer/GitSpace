@@ -70,6 +70,8 @@ struct GSButton<Label: View>: View {
                 )
         }
     }
+
+// MARK: -Modifier Extension
 private extension GSButton {
     struct GSButtonLabelModifier: ViewModifier {
         // MARK: -Property
@@ -83,7 +85,7 @@ private extension GSButton {
         // MARK: - Method
         func body(content: Content) -> some View {
             switch style {
-            case let primary(isDisabled):
+            case let .primary(isDisabled):
                 content
                     .font(
                         .system(size: 14, weight: .semibold)
@@ -98,13 +100,17 @@ private extension GSButton {
                         if isDisabled { Color.clear }
                     }
                 
-            case let secondary(isDisabled):
+            case let .secondary(isDisabled):
+                content
                 
-            case tag:
+            case .tag:
+                content
                 
-            case plain:
+            case .plain:
+                content
                 
-            case tab:
+            case .tab:
+                content
                 
             }
         }
