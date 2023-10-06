@@ -74,15 +74,12 @@ struct GSButton<Label: View>: View {
 // MARK: -Modifier Extension
 private extension GSButton {
     struct GSButtonLabelModifier: ViewModifier {
-        // MARK: -Property
         let style: Style
         
-        // MARK: -Initializer
         init(_ style: Style) {
             self.style = style
         }
         
-        // MARK: - Method
         func body(content: Content) -> some View {
             switch style {
             case let .primary(isDisabled):
