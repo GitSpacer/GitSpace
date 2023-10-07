@@ -76,6 +76,7 @@ struct GSButton<Label: View>: View {
                 )
         }
     }
+}
 
 // MARK: -Modifier Extension
 private extension GSButton {
@@ -131,4 +132,10 @@ private extension GSButton {
         }
     }
 }
+
+// MARK: -Preview
+struct GSButton_Previews: PreviewProvider {
+    static var previews: some View {
+        EmptyView()
+    }
 }
