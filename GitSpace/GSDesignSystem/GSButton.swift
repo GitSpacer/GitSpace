@@ -7,31 +7,31 @@
 
 import SwiftUI
 
-struct GSButton<Label: View>: View {
-    enum Style {
+public struct GSButton<Label: View>: View {
+    public enum Style {
         case primary(ableState: AbleState)
         case secondary(ableState: AbleState)
         case tag(tagState: TagState)
         case plain(destructiveState: DestructiveState)
         case tab
         
-        enum AbleState {
+        public enum AbleState {
             case enabled
             case disabled
         }
         
-        enum TagState {
+        public enum TagState {
             case idle
             case editing(activityState: ActivityState)
             case selected
             
-            enum ActivityState {
+            public enum ActivityState {
                 case active
                 case inactive
             }
         }
         
-        enum DestructiveState {
+        public enum DestructiveState {
             case idle
             case destructive
         }
@@ -41,7 +41,7 @@ struct GSButton<Label: View>: View {
     let action: () -> Void
     let label: Label
     
-    init(
+    public init(
         style: Style,
         action: @escaping () -> Void,
         @ViewBuilder label: () -> Label
@@ -51,7 +51,7 @@ struct GSButton<Label: View>: View {
         self.label = label()
     }
     
-    var body: some View {
+    public var body: some View {
         Button(action: action) {
             label
                 .modifier(
@@ -67,7 +67,7 @@ struct GSButton<Label: View>: View {
             case .tag(tagState: .editing(activityState: .inactive)):
                 Capsule()
                     .stroke(Color.primary, lineWidth: 2)
-            
+                
             default:
                 EmptyView()
             }
@@ -75,8 +75,7 @@ struct GSButton<Label: View>: View {
     }
 }
 
-// MARK: - Label Modifier
-private extension GSButton {
+extension GSButton {
     struct GSButtonLabelModifier: ViewModifier {
         let style: Style
         
@@ -321,57 +320,57 @@ struct GSButton_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 20) {
             GSButton(style: .primary(ableState: .enabled)) {
-
+                
             } label: {
                 Text("Primary Enabled")
             }
             GSButton(style: .primary(ableState: .disabled)) {
-
+                
             } label: {
                 Text("Primary Disabled")
             }
             GSButton(style: .secondary(ableState: .enabled)) {
-
+                
             } label: {
                 Text("Secondary Enabled")
             }
             GSButton(style: .secondary(ableState: .disabled)) {
-
+                
             } label: {
                 Text("Secondary Disabled")
             }
             GSButton(style: .tag(tagState: .idle)) {
-
+                
             } label: {
                 Text("Primary Idle")
             }
             GSButton(style: .tag(tagState: .editing(activityState: .active))) {
-
+                
             } label: {
                 Text("Tag Editing Active")
             }
             GSButton(style: .tag(tagState: .editing(activityState: .inactive))) {
-
+                
             } label: {
                 Text("Tag Editing Inactive")
             }
             GSButton(style: .tag(tagState: .selected)) {
-
+                
             } label: {
                 Text("Tag Selected")
             }
             GSButton(style: .plain(destructiveState: .idle)) {
-
+                
             } label: {
                 Text("Plain Idle")
             }
             GSButton(style: .plain(destructiveState: .destructive)) {
-
+                
             } label: {
                 Text("Plain Destructive")
             }
             GSButton(style: .tab) {
-
+                
             } label: {
                 Text("Tab")
             }
