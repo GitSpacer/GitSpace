@@ -43,7 +43,7 @@ struct GSButton<Label: View>: View {
         case primary(ableState: AbleState)
         case secondary(ableState: AbleState)
         case tag(tagState: TagState)
-        case plain
+        case plain(destructiveState: DestructiveState)
         case tab
         
         enum AbleState {
@@ -60,6 +60,11 @@ struct GSButton<Label: View>: View {
                 case active
                 case inactive
             }
+        }
+        
+        enum DestructiveState {
+            case idle
+            case destructive
         }
     }
     
