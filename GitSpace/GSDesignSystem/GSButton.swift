@@ -114,7 +114,7 @@ private extension GSButton {
                         switch tagState {
                         case .editing(activityState: .inactive):
                             Capsule()
-                                .stroke(Color.black, lineWidth: 2)
+                                .stroke(Color.primary, lineWidth: 2)
                             
                         default:
                             EmptyView()
