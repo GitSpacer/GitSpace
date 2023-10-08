@@ -108,7 +108,7 @@ private extension GSButton {
                     .font(
                         .system(size: 14, weight: .semibold)
                     )
-                    .foregroundColor(.black)
+                    .modifier(GSButtonLabelForegroundColorModifier(style))
                     .padding(.horizontal, 34)
                     .padding(.vertical, 18)
                     .frame(minWidth: 150)
@@ -123,7 +123,7 @@ private extension GSButton {
                     .font(
                         .system(size: 14, weight: .semibold)
                     )
-//                    .foregroundColor(state == .enabled ? .white : .black)
+                    .modifier(GSButtonLabelForegroundColorModifier(style))
                     .padding(.horizontal, 23)
                     .padding(.vertical, 13)
                     .frame(minWidth: 80)
@@ -150,7 +150,7 @@ private extension GSButton {
         let style: Style
         @Environment(\.colorScheme) var colorScheme
         
-        init(style: Style) {
+        init(_ style: Style) {
             self.style = style
         }
         
@@ -212,7 +212,7 @@ private extension GSButton {
                 
             case .tab:
                 content
-                    .foregroundColor(.primary)   
+                    .foregroundColor(.primary)
             }
         }
     }
