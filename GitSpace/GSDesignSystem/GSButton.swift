@@ -103,6 +103,14 @@ private extension GSButton {
                 
             case .tag:
                 content
+                    .font(
+                        .system(size: 16, weight: .regular)
+                    )
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 9)
+                    .frame(minWidth: 62)
+                    .modifier(GSButtonLabelColorModifier(style))
+                    .cornerRadius(20)
                 
             case .plain:
                 content
