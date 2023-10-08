@@ -77,7 +77,7 @@ private extension GSButton {
                     .font(
                         .system(size: 14, weight: .semibold)
                     )
-                    .modifier(GSButtonLabelForegroundColorModifier(style))
+                    .modifier(GSButtonLabelColorModifier(style))
                     .padding(.horizontal, 34)
                     .padding(.vertical, 18)
                     .frame(minWidth: 150)
@@ -92,7 +92,7 @@ private extension GSButton {
                     .font(
                         .system(size: 14, weight: .semibold)
                     )
-                    .modifier(GSButtonLabelForegroundColorModifier(style))
+                    .modifier(GSButtonLabelColorModifier(style))
                     .padding(.horizontal, 23)
                     .padding(.vertical, 13)
                     .frame(minWidth: 80)
@@ -116,9 +116,9 @@ private extension GSButton {
     }
 }
 
-// MARK: - Foreground / Background Color Modifier
+// MARK: - Foreground + Background Color Modifier
 extension GSButton.GSButtonLabelModifier {
-    struct GSButtonLabelForegroundColorModifier: ViewModifier {
+    struct GSButtonLabelColorModifier: ViewModifier {
         let style: GSButton.Style
         @Environment(\.colorScheme) var colorScheme
         
