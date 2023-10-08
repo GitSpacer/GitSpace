@@ -173,11 +173,12 @@ extension GSButton.GSButtonLabelModifier {
                             .foregroundColor(.black)
                             .background(Color.gsGreenPrimary)
                     }
+                    
                 case let .plain(destructiveState):
                     switch destructiveState {
                     case .idle:
                         content
-                            .foregroundColor(.primary)
+                            .foregroundColor(.black)
                         
                     case .destructive:
                         content
@@ -186,7 +187,7 @@ extension GSButton.GSButtonLabelModifier {
                     
                 case .tab:
                     content
-                        .foregroundColor(.primary)
+                        .foregroundColor(.black)
                 }
                 
             case .dark:
@@ -195,6 +196,7 @@ extension GSButton.GSButtonLabelModifier {
                     content
                         .foregroundColor(.black)
                         .background(Color.gsYellow)
+                    
                 case let .secondary(ableState):
                     switch ableState {
                     case .enabled:
@@ -207,12 +209,16 @@ extension GSButton.GSButtonLabelModifier {
                             .foregroundColor(.white)
                             .background(Color.gsGray1)
                     }
+                    
                 case let .tag(tagState):
                     content
+                    
                 case let .plain(destructiveState):
                     content
+                    
                 case .tab:
                     content
+                    
                 }
                 
             @unknown default:
