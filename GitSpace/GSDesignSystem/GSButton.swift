@@ -211,7 +211,31 @@ extension GSButton.GSButtonLabelModifier {
                     }
                     
                 case let .tag(tagState):
-                    content
+                    switch tagState {
+                    case .idle:
+                        content
+                            .foregroundColor(.white)
+                            .background(Color.gsGray2)
+                        
+                    case let .editing(activityState):
+                        switch activityState {
+                        case .active:
+                            content
+                                .foregroundColor(.black)
+                                .background(Color.white)
+                            
+                        case .inactive:
+                            content
+                                .foregroundColor(.white)
+                                .background(Color.black)
+                        }
+                        
+                    case .selected:
+                        content
+                            .foregroundColor(.black)
+                            .background(Color.gsYellow)
+                    }
+                    
                     
                 case let .plain(destructiveState):
                     content
