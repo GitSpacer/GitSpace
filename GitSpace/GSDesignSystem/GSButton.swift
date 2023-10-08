@@ -250,7 +250,7 @@ extension GSButton.GSButtonLabelModifier {
                     
                 case .tab:
                     content
-                    
+                        .foregroundColor(.white)
                 }
                 
             @unknown default:
