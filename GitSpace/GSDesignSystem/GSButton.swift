@@ -39,7 +39,6 @@ extension Color {
 }
 
 struct GSButton<Label: View>: View {
-    
     enum Style {
         case primary(isDisabled: Bool)
         case secondary(isDisabled: Bool)
@@ -120,6 +119,37 @@ private extension GSButton {
                     }
                 
             case .tag:
+                content
+                
+            case .plain:
+                content
+                
+            case .tab:
+                content
+                
+            }
+        }
+    }
+    
+    struct GSButtonLabelForegroundColorModifier: ViewModifier {
+        let style: Style
+        @Environment(\.colorScheme) var colorScheme
+        
+        init(style: Style) {
+            self.style = style
+        }
+        
+        func body(content: Content) -> some View {
+            switch style {
+            case .primary:
+                content
+                    .foregroundColor(.black)
+                
+            case let .secondary(isDisabled):
+                content
+                    .foregroundColor(isDisabled ? .white : .black)
+                
+            case let .tag(state):
                 content
                 
             case .plain:
