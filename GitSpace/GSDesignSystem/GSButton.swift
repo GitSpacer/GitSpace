@@ -319,7 +319,7 @@ extension Color {
 // MARK: -Preview
 struct GSButton_Previews: PreviewProvider {
     static var previews: some View {
-        VStack {
+        VStack(spacing: 20) {
             GSButton(style: .primary(ableState: .enabled)) {
 
             } label: {
