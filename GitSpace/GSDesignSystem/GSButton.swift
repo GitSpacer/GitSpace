@@ -127,64 +127,78 @@ extension GSButton.GSButtonLabelModifier {
         }
         
         func body(content: Content) -> some View {
-            switch style {
-            case .primary:
-                content
-                    .foregroundColor(.black)
-                
-            case let .secondary(ableState):
-                switch ableState {
-                case .enabled:
+            switch colorScheme {
+            case .light:
+                switch style {
+                case .primary:
                     content
                         .foregroundColor(.black)
+                        .background(Color.gsGreenPrimary)
                     
-                case .disabled:
-                    content
-                        .foregroundColor(.white)
-                }
-                
-            case let .tag(tagState):
-                switch tagState {
-                case .idle:
-                    content
-                        .foregroundColor(.white)
-                    
-                case let .editing(activityState):
-                    switch (colorScheme, activityState) {
-                    case (.light, .active):
+                case let .secondary(ableState):
+                    switch ableState {
+                    case .enabled:
+                        content
+                            .foregroundColor(.black)
+                        
+                    case .disabled:
+                        content
+                            .foregroundColor(.white)
+                    }
+                case let .tag(tagState):
+                    switch tagState {
+                    case .idle:
                         content
                             .foregroundColor(.white)
                         
-                    case (.light, .inactive):
-                        content
-                            .foregroundStyle(.black)
+                    case let .editing(activityState):
+                        switch activityState {
+                        case .active:
+                            content
+                                .foregroundColor(.white)
+                            
+                        case .inactive:
+                            content
+                                .foregroundColor(.black)
+                        }
                         
-                    case (.dark, _):
+                    case .selected:
+                        content.foregroundColor(.black)
+                    }
+                case let .plain(destructiveState):
+                    switch destructiveState {
+                    case .idle:
                         content
                             .foregroundColor(.primary)
                         
-                    @unknown default:
+                    case .destructive:
                         content
+                            .foregroundColor(.gsRed)
                     }
                     
-                case .selected:
-                    content.foregroundColor(.black)
-                }
-                
-            case let .plain(destructvieState):
-                switch destructvieState {
-                case .idle:
+                case .tab:
                     content
                         .foregroundColor(.primary)
-                    
-                case .destructive:
-                    content
-                        .foregroundColor(.gsRed)
                 }
                 
-            case .tab:
+            case .dark:
+                switch style {
+                case let .primary(ableState):
+                    content
+                        .foregroundColor(.black)
+                        .background(Color.gsYellow)
+                case let .secondary(ableState):
+                    content
+                case let .tag(tagState):
+                    content
+                case let .plain(destructiveState):
+                    content
+                case .tab:
+                    content
+                }
+                
+            @unknown default:
                 content
-                    .foregroundColor(.primary)
             }
         }
     }
