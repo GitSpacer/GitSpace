@@ -199,8 +199,16 @@ private extension GSButton {
                     content.foregroundColor(.black)
                 }
                 
-            case .plain:
-                content
+            case let .plain(destructvieState):
+                switch destructvieState {
+                case .idle:
+                    content
+                        .foregroundColor(.primary)
+                    
+                case .destructive:
+                    content
+                        .foregroundColor(.gsRed)
+                }
                 
             case .tab:
                 content
