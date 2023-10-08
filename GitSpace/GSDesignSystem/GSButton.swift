@@ -53,8 +53,13 @@ struct GSButton<Label: View>: View {
         
         enum TagState {
             case idle
-            case editing(isActive: Bool)
+            case editing(activityState: ActivityState)
             case selected
+            
+            enum ActivityState {
+                case active
+                case inactive
+            }
         }
     }
     
@@ -167,13 +172,17 @@ private extension GSButton {
                     content
                         .foregroundColor(.white)
                     
-                case let .editing(isActive):
-                    switch colorScheme {
-                    case .light:
+                case let .editing(activityState):
+                    switch (colorScheme, activityState) {
+                    case (.light, .active):
                         content
-                            .foregroundColor(isActive ? .white : .black)
+                            .foregroundColor(.white)
                         
-                    case .dark:
+                    case (.light, .inactive):
+                        content
+                            .foregroundStyle(.black)
+                        
+                    case (.dark, _):
                         content
                             .foregroundColor(.primary)
                         
