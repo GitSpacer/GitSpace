@@ -150,7 +150,28 @@ private extension GSButton {
                     .foregroundColor(isDisabled ? .white : .black)
                 
             case let .tag(state):
-                content
+                switch state {
+                case .idle:
+                    content
+                        .foregroundColor(.white)
+                    
+                case let .editing(isActive):
+                    switch colorScheme {
+                    case .light:
+                        content
+                            .foregroundColor(isActive ? .white : .black)
+                        
+                    case .dark:
+                        content
+                            .foregroundColor(.primary)
+                        
+                    @unknown default:
+                        content
+                    }
+                    
+                case .selected:
+                    content.foregroundColor(.black)
+                }
                 
             case .plain:
                 content
