@@ -40,9 +40,9 @@ extension Color {
 
 struct GSButton<Label: View>: View {
     enum Style {
-        case primary(state: AbleState)
-        case secondary(state: AbleState)
-        case tag(state: TagState)
+        case primary(ableState: AbleState)
+        case secondary(ableState: AbleState)
+        case tag(tagState: TagState)
         case plain
         case tab
         
