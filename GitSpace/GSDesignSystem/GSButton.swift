@@ -183,12 +183,22 @@ extension GSButton.GSButtonLabelModifier {
                 
             case .dark:
                 switch style {
-                case let .primary(ableState):
+                case .primary:
                     content
                         .foregroundColor(.black)
                         .background(Color.gsYellow)
                 case let .secondary(ableState):
-                    content
+                    switch ableState {
+                    case .enabled:
+                        content
+                            .foregroundColor(.black)
+                            .background(Color.gsYellow)
+                        
+                    case .disabled:
+                        content
+                            .foregroundColor(.white)
+                            .background(Color.gsGray1)
+                    }
                 case let .tag(tagState):
                     content
                 case let .plain(destructiveState):
