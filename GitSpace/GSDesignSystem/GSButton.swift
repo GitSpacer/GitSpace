@@ -145,12 +145,14 @@ private extension GSButton {
             }
         }
     }
-    
+}
+
+extension GSButton.GSButtonLabelModifier {
     struct GSButtonLabelForegroundColorModifier: ViewModifier {
-        let style: Style
+        let style: GSButton.Style
         @Environment(\.colorScheme) var colorScheme
         
-        init(_ style: Style) {
+        init(_ style: GSButton.Style) {
             self.style = style
         }
         
