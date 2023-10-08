@@ -153,20 +153,25 @@ extension GSButton.GSButtonLabelModifier {
                     case .idle:
                         content
                             .foregroundColor(.white)
+                            .background(Color.black)
                         
                     case let .editing(activityState):
                         switch activityState {
                         case .active:
                             content
                                 .foregroundColor(.white)
+                                .background(Color.black)
                             
                         case .inactive:
                             content
                                 .foregroundColor(.black)
+                                .background(Color.white)
                         }
                         
                     case .selected:
-                        content.foregroundColor(.black)
+                        content
+                            .foregroundColor(.black)
+                            .background(Color.gsGreenPrimary)
                     }
                 case let .plain(destructiveState):
                     switch destructiveState {
