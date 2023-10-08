@@ -114,9 +114,17 @@ private extension GSButton {
                 
             case .plain:
                 content
+                    .font(
+                        .system(size: 16, weight: .medium)
+                    )
+                    .modifier(GSButtonLabelColorModifier(style))
                 
             case .tab:
                 content
+                    .font(
+                        .system(size: 20, weight: .medium)
+                    )
+                    .modifier(GSButtonLabelColorModifier(style))
                 
             }
         }
