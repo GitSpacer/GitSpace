@@ -212,7 +212,7 @@ private extension GSButton {
                 
             case .tab:
                 content
-                
+                    .foregroundColor(.primary)   
             }
         }
     }
