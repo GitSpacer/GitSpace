@@ -40,11 +40,16 @@ extension Color {
 
 struct GSButton<Label: View>: View {
     enum Style {
-        case primary(isDisabled: Bool)
-        case secondary(isDisabled: Bool)
+        case primary(state: AbleState)
+        case secondary(state: AbleState)
         case tag(state: TagState)
         case plain
         case tab
+        
+        enum AbleState {
+            case enabled
+            case disabled
+        }
         
         enum TagState {
             case idle
@@ -88,7 +93,7 @@ private extension GSButton {
         
         func body(content: Content) -> some View {
             switch style {
-            case let .primary(isDisabled):
+            case let .primary(ableState):
                 content
                     .font(
                         .system(size: 14, weight: .semibold)
@@ -100,22 +105,22 @@ private extension GSButton {
                     .background(Color.gsGreenPrimary)
                     .cornerRadius(30)
                     .overlay {
-                        if isDisabled { Color.clear }
+                        if ableState == .disabled { Color.clear }
                     }
                 
-            case let .secondary(isDisabled):
+            case let .secondary(ableState):
                 content
                     .font(
                         .system(size: 14, weight: .semibold)
                     )
-                    .foregroundColor(isDisabled ? .white : .black)
+//                    .foregroundColor(state == .enabled ? .white : .black)
                     .padding(.horizontal, 23)
                     .padding(.vertical, 13)
                     .frame(minWidth: 80)
-                    .background(isDisabled ? Color.gsGray1 : Color.gsGreenPrimary)
+//                    .background(isDisabled ? Color.gsGray1 : Color.gsGreenPrimary)
                     .cornerRadius(20)
                     .overlay {
-                        if isDisabled { Color.clear }
+                        if ableState == .disabled { Color.clear }
                     }
                 
             case .tag:
@@ -145,9 +150,16 @@ private extension GSButton {
                 content
                     .foregroundColor(.black)
                 
-            case let .secondary(isDisabled):
-                content
-                    .foregroundColor(isDisabled ? .white : .black)
+            case let .secondary(ableState):
+                switch ableState {
+                case .enabled:
+                    content
+                        .foregroundColor(.black)
+                    
+                case .disabled:
+                    content
+                        .foregroundColor(.white)
+                }
                 
             case let .tag(state):
                 switch state {
