@@ -91,7 +91,6 @@ private extension GSButton {
                     .font(
                         .system(size: 14, weight: .semibold)
                     )
-                    .modifier(GSButtonLabelColorModifier(style))
                     .padding(.horizontal, 23)
                     .padding(.vertical, 13)
                     .frame(minWidth: 80)
@@ -101,7 +100,7 @@ private extension GSButton {
                         if ableState == .disabled { Color.clear }
                     }
                 
-            case .tag:
+            case let .tag(tagState):
                 content
                     .font(
                         .system(size: 16, weight: .regular)
@@ -111,6 +110,16 @@ private extension GSButton {
                     .frame(minWidth: 62)
                     .modifier(GSButtonLabelColorModifier(style))
                     .cornerRadius(20)
+                    .overlay {
+                        switch tagState {
+                        case .editing(activityState: .inactive):
+                            Capsule()
+                                .stroke(Color.black, lineWidth: 2)
+                            
+                        default:
+                            EmptyView()
+                        }
+                    }
                 
             case .plain:
                 content
