@@ -255,6 +255,7 @@ extension GSButton.GSButtonLabelModifier {
                 
             @unknown default:
                 content
+                    .foregroundColor(.primary)
             }
         }
     }
