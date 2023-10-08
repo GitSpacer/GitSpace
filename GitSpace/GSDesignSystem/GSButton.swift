@@ -58,6 +58,20 @@ struct GSButton<Label: View>: View {
                     GSButtonLabelModifier(style)
                 )
         }
+        .overlay {
+            switch style {
+            case .primary(ableState: .disabled), .secondary(ableState: .disabled):
+                Capsule()
+                    .fill(Color.white.opacity(0.1))
+                
+            case .tag(tagState: .editing(activityState: .inactive)):
+                Capsule()
+                    .stroke(Color.primary, lineWidth: 2)
+            
+            default:
+                EmptyView()
+            }
+        }
     }
 }
 
@@ -72,7 +86,7 @@ private extension GSButton {
         
         func body(content: Content) -> some View {
             switch style {
-            case let .primary(ableState):
+            case .primary:
                 content
                     .font(
                         .system(size: 14, weight: .semibold)
@@ -82,11 +96,8 @@ private extension GSButton {
                     .frame(minWidth: 150)
                     .modifier(GSButtonLabelColorModifier(style))
                     .cornerRadius(30)
-                    .overlay {
-                        if ableState == .disabled { Color.clear }
-                    }
                 
-            case let .secondary(ableState):
+            case .secondary:
                 content
                     .font(
                         .system(size: 14, weight: .semibold)
@@ -96,11 +107,8 @@ private extension GSButton {
                     .frame(minWidth: 80)
                     .modifier(GSButtonLabelColorModifier(style))
                     .cornerRadius(20)
-                    .overlay {
-                        if ableState == .disabled { Color.clear }
-                    }
                 
-            case let .tag(tagState):
+            case .tag:
                 content
                     .font(
                         .system(size: 16, weight: .regular)
@@ -110,16 +118,6 @@ private extension GSButton {
                     .frame(minWidth: 62)
                     .modifier(GSButtonLabelColorModifier(style))
                     .cornerRadius(20)
-                    .overlay {
-                        switch tagState {
-                        case .editing(activityState: .inactive):
-                            Capsule()
-                                .stroke(Color.primary, lineWidth: 2)
-                            
-                        default:
-                            EmptyView()
-                        }
-                    }
                 
             case .plain:
                 content
@@ -134,7 +132,6 @@ private extension GSButton {
                         .system(size: 20, weight: .medium)
                     )
                     .modifier(GSButtonLabelColorModifier(style))
-                
             }
         }
     }
