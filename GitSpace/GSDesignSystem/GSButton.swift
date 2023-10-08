@@ -77,11 +77,10 @@ private extension GSButton {
                     .font(
                         .system(size: 14, weight: .semibold)
                     )
-                    .modifier(GSButtonLabelColorModifier(style))
                     .padding(.horizontal, 34)
                     .padding(.vertical, 18)
                     .frame(minWidth: 150)
-                    .background(Color.gsGreenPrimary)
+                    .modifier(GSButtonLabelColorModifier(style))
                     .cornerRadius(30)
                     .overlay {
                         if ableState == .disabled { Color.clear }
@@ -96,7 +95,7 @@ private extension GSButton {
                     .padding(.horizontal, 23)
                     .padding(.vertical, 13)
                     .frame(minWidth: 80)
-//                    .background(isDisabled ? Color.gsGray1 : Color.gsGreenPrimary)
+                    .modifier(GSButtonLabelColorModifier(style))
                     .cornerRadius(20)
                     .overlay {
                         if ableState == .disabled { Color.clear }
