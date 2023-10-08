@@ -161,8 +161,8 @@ private extension GSButton {
                         .foregroundColor(.white)
                 }
                 
-            case let .tag(state):
-                switch state {
+            case let .tag(tagState):
+                switch tagState {
                 case .idle:
                     content
                         .foregroundColor(.white)
