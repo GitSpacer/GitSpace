@@ -238,7 +238,15 @@ extension GSButton.GSButtonLabelModifier {
                     
                     
                 case let .plain(destructiveState):
-                    content
+                    switch destructiveState {
+                    case .idle:
+                        content
+                            .foregroundColor(.white)
+                        
+                    case .destructive:
+                        content
+                            .foregroundColor(.gsRed)
+                    }
                     
                 case .tab:
                     content
