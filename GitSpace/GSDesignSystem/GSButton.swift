@@ -258,6 +258,7 @@ extension Color {
     static let gsGreenSecondary: Color = .init(hex: "#E0FF66")
     static let gsYellow: Color = .init(hex: "#FAFF10")
     static let gsGray1: Color = .init(hex: "#8D8F97")
+    static let gsGray2: Color = .init(hex: "#27292E")
     static let gsRed: Color = .init(hex: "#FF6C2E")
 }
 
