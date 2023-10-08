@@ -140,11 +140,14 @@ extension GSButton.GSButtonLabelModifier {
                     case .enabled:
                         content
                             .foregroundColor(.black)
+                            .background(Color.gsGreenPrimary)
                         
                     case .disabled:
                         content
                             .foregroundColor(.white)
+                            .background(Color.gsGray1)
                     }
+                    
                 case let .tag(tagState):
                     switch tagState {
                     case .idle:
