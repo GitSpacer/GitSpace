@@ -322,6 +322,62 @@ extension Color {
 // MARK: -Preview
 struct GSButton_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyView()
+        VStack {
+            GSButton(style: .primary(ableState: .enabled)) {
+
+            } label: {
+                Text("Primary Enabled")
+            }
+            GSButton(style: .primary(ableState: .disabled)) {
+
+            } label: {
+                Text("Primary Disabled")
+            }
+            GSButton(style: .secondary(ableState: .enabled)) {
+
+            } label: {
+                Text("Secondary Enabled")
+            }
+            GSButton(style: .secondary(ableState: .disabled)) {
+
+            } label: {
+                Text("Secondary Disabled")
+            }
+            GSButton(style: .tag(tagState: .idle)) {
+
+            } label: {
+                Text("Primary Idle")
+            }
+            GSButton(style: .tag(tagState: .editing(activityState: .active))) {
+
+            } label: {
+                Text("Tag Editing Active")
+            }
+            GSButton(style: .tag(tagState: .editing(activityState: .inactive))) {
+
+            } label: {
+                Text("Tag Editing Inactive")
+            }
+            GSButton(style: .tag(tagState: .selected)) {
+
+            } label: {
+                Text("Tag Selected")
+            }
+            GSButton(style: .plain(destructiveState: .idle)) {
+
+            } label: {
+                Text("Plain Idle")
+            }
+            GSButton(style: .plain(destructiveState: .destructive)) {
+
+            } label: {
+                Text("Plain Destructive")
+            }
+            GSButton(style: .tab) {
+
+            } label: {
+                Text("Tab")
+            }
+        }
     }
 }
