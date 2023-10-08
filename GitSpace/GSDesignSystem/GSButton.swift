@@ -45,12 +45,12 @@ struct GSButton<Label: View>: View {
         case tag(state: TagState)
         case plain
         case tab
-    }
-    
-    enum TagState {
-        case idle
-        case editing(isActive: Bool)
-        case selected
+        
+        enum TagState {
+            case idle
+            case editing(isActive: Bool)
+            case selected
+        }
     }
     
     let style: Style
