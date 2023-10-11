@@ -49,6 +49,14 @@ extension GSCanvas {
                 switch style {
                 case .primary:
                     content
+                        .padding(20)
+                        .background(
+                            RoundedRectangle(cornerRadius: 17, style: .continuous)
+                                .fill(Color.gray)
+                                .frame(maxWidth: .infinity)
+                                .frame(minWidth: 50)
+                                .shadow(color: .gray.opacity(0.0), radius: 6, x:0, y:2)
+                            )
                 }
             @unknown default:
                 content
