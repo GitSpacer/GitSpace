@@ -25,6 +25,34 @@ public struct GSCanvas<_Content: View>: View {
     }
 }
 
+extension GSCanvas {
+    public struct GSCanvasModifier: ViewModifier {
+        @Environment(\.colorScheme) var colorScheme
+        let style: GSCanvasStyle
+        
+        public func body(content: Content) -> some View {
+            switch colorScheme {
+            case .light:
+                switch style {
+                case .primary:
+                    content
+                }
+            case .dark:
+                switch style {
+                case .primary:
+                    content
+                }
+            @unknown default:
+                content
+            }
+        }
+        
+        init(style: GSCanvasStyle) {
+            self.style = style
+        }
+    }
+}
+
 #Preview {
     GSCanvas(style: .primary) {
         Text("Hello")
