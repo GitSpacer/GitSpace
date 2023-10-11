@@ -17,6 +17,7 @@ public struct GSCanvas<_Content: View>: View {
     
     public var body: some View {
         content
+            .modifier(GSCanvasModifier(style: style))
     }
     
     public init(style: GSCanvasStyle, @ViewBuilder content: () -> _Content) {
