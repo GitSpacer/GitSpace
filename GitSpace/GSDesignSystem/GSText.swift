@@ -115,6 +115,12 @@ enum GSTextConstants {
     static let descriptionColor: Color = Color.gsGray2
 }
 
+extension Color {
+    static let gsGray1 = Color("GSGray1")
+    static let gsGray2 = Color("GSGray2")
+    static let gsGray3 = Color("GSGray3")
+}
+
 #Preview {
     GSText()
 }
