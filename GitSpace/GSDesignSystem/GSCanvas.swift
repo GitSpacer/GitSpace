@@ -137,7 +137,7 @@ extension GSCanvas {
     }
 }
 
-// MARK: Hexa Color (Merge 후 같은 파일로 통일할 것)
+// !!!: Hexa Color (Merge 후 같은 파일로 통일할 것)
 extension Color {
     init(hex: Int, opacity: Double = 1.0) {
         let red = Double((hex >> 16) & 0xff) / 255
