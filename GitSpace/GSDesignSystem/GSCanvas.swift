@@ -71,7 +71,65 @@ extension GSCanvas {
 }
 
 #Preview {
-    GSCanvas(style: .primary) {
-        Text("Hello")
+    VStack {
+        GSCanvas(style: .primary) {
+            Text("This is primary GSCanvas.")
+        }
+        
+        GSCanvas(style: .primary) {
+            HStack {
+                Image(systemName: "star.fill")
+                VStack(alignment: .leading){
+                    Text("**Star**")
+                        .font(.title3)
+                    Text("Star repositories you want to see again.")
+                        .font(.caption)
+                }
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+            }
+        }
+        
+        GSCanvas(style: .primary) {
+            HStack {
+                Image(systemName: "star.fill")
+                VStack(alignment: .leading){
+                    Text("**Star**")
+                        .font(.title3)
+                    Text("Star repositories you want to see again.")
+                        .font(.caption)
+                }
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+            }
+        }
+        .padding(.horizontal)
+        
+        GSCanvas(style: .primary) {
+            HStack {
+                Image(systemName: "tag.fill")
+                VStack(alignment: .leading){
+                    Text("**Tag**")
+                        .font(.title3)
+                    Text("Organize your starred repositories using tags.")
+                        .font(.caption)
+                }
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+            }
+        }
+        .padding(.horizontal)
+        
+        GSCanvas(style: .primary) {
+            HStack {
+                Text("**How to see a list of blocked users?**")
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+            }
+        }
+        .padding(.horizontal)
     }
 }
