@@ -125,6 +125,34 @@ extension GSCanvas {
             }
         }
         .padding(.horizontal)
+        
+        GSCanvas(style: .primary) {
+            ZStack {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading) {
+                        HStack(alignment: .top) {
+                            VStack(alignment: .leading) {
+                                Text("GitSpacer")
+                                    .font(.body)
+                                    .multilineTextAlignment(.leading)
+                                Text("**GitSpace**")
+                                    .font(.title2)
+                                    .multilineTextAlignment(.leading)
+                            }
+                            Spacer()
+                        }
+                        .padding(.bottom, 5)
+                        Text("🚀 GitSpace")
+                            .font(.caption)
+                            .multilineTextAlignment(.leading)
+                    }
+                    Image(systemName: "ellipsis")
+                        .frame(width: 40, height: 40)
+                        .offset(x: 10, y: -15)
+                }
+            }
+        }
+        .padding(.horizontal)
     }
 }
 
