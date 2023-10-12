@@ -49,7 +49,7 @@ extension GSCanvas {
                     .padding(20)
                     .background(
                         RoundedRectangle(cornerRadius: 17, style: .continuous)
-                            .fill(Color.white)
+                            .fill(backgroundColorByColorScheme)
                             .frame(maxWidth: .infinity)
                             .frame(minWidth: 50)
                         // !!!: Merge 이후 프로젝트 컬러(.gsGray2)로 바꿀 것
