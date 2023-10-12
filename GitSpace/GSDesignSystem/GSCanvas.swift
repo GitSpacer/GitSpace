@@ -31,6 +31,17 @@ extension GSCanvas {
         @Environment(\.colorScheme) var colorScheme
         let style: GSCanvasStyle
         
+        var backgroundColorByColorScheme: Color {
+            switch colorScheme {
+            case .light:
+                Color.white
+            case.dark:
+                Color.init(hex: "#27292E")
+            default:
+                Color.white
+            }
+        }
+        
         public func body(content: Content) -> some View {
             switch style {
             case .primary:
