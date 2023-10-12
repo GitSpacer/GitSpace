@@ -32,38 +32,18 @@ extension GSCanvas {
         let style: GSCanvasStyle
         
         public func body(content: Content) -> some View {
-            switch colorScheme {
-            case .light:
-                switch style {
-                case .primary:
-                    content
-                        .padding(20)
-                        .background(
-                            RoundedRectangle(cornerRadius: 17, style: .continuous)
-                                .fill(Color.white)
-                                .frame(maxWidth: .infinity)
-                                .frame(minWidth: 50)
-                                // !!!: Merge 이후 프로젝트 컬러(.gsGray2)로 바꿀 것
-                                .shadow(color: Color.init(hex: "#27292E").opacity(0.3), radius: 6, x:0, y:2)
-                            )
-                }
-            case .dark:
-                switch style {
-                case .primary:
-                    content
-                        .padding(20)
-                        .background(
-                            RoundedRectangle(cornerRadius: 17, style: .continuous)
-                                // !!!: Merge 이후 프로젝트 컬러(.gsGray2)로 바꿀 것
-                                .fill(Color.init(hex: "#27292E"))
-                                .frame(maxWidth: .infinity)
-                                .frame(minWidth: 50)
-                                // !!!: Merge 이후 프로젝트 컬러(.gsGray2)로 바꿀 것
-                                .shadow(color: Color.init(hex: "#27292E").opacity(0.0), radius: 6, x:0, y:2)
-                            )
-                }
-            @unknown default:
+            switch style {
+            case .primary:
                 content
+                    .padding(20)
+                    .background(
+                        RoundedRectangle(cornerRadius: 17, style: .continuous)
+                            .fill(Color.white)
+                            .frame(maxWidth: .infinity)
+                            .frame(minWidth: 50)
+                        // !!!: Merge 이후 프로젝트 컬러(.gsGray2)로 바꿀 것
+                            .shadow(color: Color.init(hex: "#27292E").opacity(0.3), radius: 6, x:0, y:2)
+                    )
             }
         }
         
