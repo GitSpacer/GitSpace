@@ -123,14 +123,14 @@ extension Color {
 
 #Preview {
     VStack {
-        GSText(style: .title1, string: "타이틀1")
-        GSText(style: .title2, string: "타이틀2")
-        GSText(style: .title3, string: "타이틀3")
-        GSText(style: .sectionTitle, string: "섹션타이틀")
-        GSText(style: .body1, string: "바디1")
-        GSText(style: .body2, string: "바디2")
-        GSText(style: .caption1, string: "캡션1")
-        GSText(style: .caption2, string: "캡션2")
-        GSText(style: .description, string: "디스크립션")
+        GSText(style: .title1, string: "Title1")
+        GSText(style: .title2, string: "Title2")
+        GSText(style: .title3, string: "Title3")
+        GSText(style: .sectionTitle, string: "SectionTitle")
+        GSText(style: .body1, string: "Body1")
+        GSText(style: .body2, string: "Body2")
+        GSText(style: .caption1, string: "Caption1")
+        GSText(style: .caption2, string: "Caption2")
+        GSText(style: .description, string: "Description")
     }
 }
