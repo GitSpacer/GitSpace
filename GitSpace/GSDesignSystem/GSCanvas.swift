@@ -53,8 +53,7 @@ extension GSCanvas {
                             .fill(backgroundColorByColorScheme)
                             .frame(maxWidth: .infinity)
                             .frame(minWidth: 50)
-                        // !!!: Merge 이후 프로젝트 컬러(.gsGray2)로 바꿀 것
-                            .shadow(color: Color.init(hex: "#27292E").opacity(0.3), radius: 6, x:0, y:2)
+                            .shadow(color: Color.gsGray2.opacity(0.3), radius: 6, x:0, y:2)
                     )
             }
         }

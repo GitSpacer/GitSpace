@@ -11,6 +11,7 @@
 		6E15595A2ACEFFCA003972BD /* GSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1559592ACEFFCA003972BD /* GSButton.swift */; };
 		6E61F9332AD81A48001C7FF3 /* GSCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E61F9322AD81A48001C7FF3 /* GSCanvas.swift */; };
 		6E61F9352AD81CC6001C7FF3 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E61F9342AD81CC6001C7FF3 /* Color+.swift */; };
+		6E652F452AD821B1008F8151 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E652F442AD821B1008F8151 /* Constant.swift */; };
 		6E7E3BF52AD35A7700152EAE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7E3BF42AD35A7700152EAE /* FirebaseFirestore */; };
 		6E7E3BF72AD35A7700152EAE /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7E3BF62AD35A7700152EAE /* FirebaseFirestoreSwift */; };
 		6E7E3BF92AD35A7700152EAE /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7E3BF82AD35A7700152EAE /* FirebaseMessaging */; };
@@ -65,6 +66,7 @@
 		6E1559592ACEFFCA003972BD /* GSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSButton.swift; sourceTree = "<group>"; };
 		6E61F9322AD81A48001C7FF3 /* GSCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSCanvas.swift; sourceTree = "<group>"; };
 		6E61F9342AD81CC6001C7FF3 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		6E652F442AD821B1008F8151 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		7E65A94B2ACEEA3200C9BEA3 /* GitSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E65A94E2ACEEA3200C9BEA3 /* GitSpaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSpaceApp.swift; sourceTree = "<group>"; };
 		7E65A9502ACEEA3200C9BEA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E652F432AD8218C008F8151 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				6E652F442AD821B1008F8151 /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		7E65A9422ACEEA3200C9BEA3 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				7E65A96D2ACEEB7600C9BEA3 /* GitSpace_Utilities.h */,
+				6E652F432AD8218C008F8151 /* Constant */,
 				7E65A9772ACEEB9900C9BEA3 /* Extensions */,
 			);
 			path = GSUtilities;
@@ -349,6 +360,7 @@
 			files = (
 				7E65A9792ACEEBBF00C9BEA3 /* String+.swift in Sources */,
 				6E61F9352AD81CC6001C7FF3 /* Color+.swift in Sources */,
+				6E652F452AD821B1008F8151 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
