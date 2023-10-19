@@ -257,7 +257,6 @@ extension GSButton.GSButtonLabelModifier {
                             .background(Color.gsYellow)
                     }
                     
-                    
                 case let .plain(destructiveState):
                     switch destructiveState {
                     case .idle:
