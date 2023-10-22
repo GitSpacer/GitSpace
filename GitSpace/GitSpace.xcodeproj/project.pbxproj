@@ -27,6 +27,9 @@
 		7E65A9822ACEECC000C9BEA3 /* GSDesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E65A9812ACEECC000C9BEA3 /* GSDesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E65A9852ACEECC000C9BEA3 /* GSDesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */; };
 		7E65A9862ACEECC000C9BEA3 /* GSDesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7EA3688C2AE3BDA40092D91D /* GSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3688B2AE3BDA40092D91D /* GSTextField.swift */; };
+		7EF113762AE40DFA0068285A /* GSUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A96B2ACEEB7600C9BEA3 /* GSUtilities.framework */; platformFilter = ios; };
+		7EF113772AE40DFA0068285A /* GSUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A96B2ACEEB7600C9BEA3 /* GSUtilities.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,13 @@
 			remoteGlobalIDString = 7E65A97E2ACEECC000C9BEA3;
 			remoteInfo = GSDesignSystem;
 		};
+		7EF113782AE40DFA0068285A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E65A9432ACEEA3200C9BEA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E65A96A2ACEEB7600C9BEA3;
+			remoteInfo = GSUtilities;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +65,17 @@
 			files = (
 				7E65A9722ACEEB7600C9BEA3 /* GSUtilities.framework in Embed Frameworks */,
 				7E65A9862ACEECC000C9BEA3 /* GSDesignSystem.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EF1137A2AE40DFA0068285A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7EF113772AE40DFA0068285A /* GSUtilities.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +98,7 @@
 		7E65A9782ACEEBBF00C9BEA3 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GSDesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E65A9812ACEECC000C9BEA3 /* GSDesignSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDesignSystem.h; sourceTree = "<group>"; };
+		7EA3688B2AE3BDA40092D91D /* GSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF113762AE40DFA0068285A /* GSUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +148,7 @@
 				7E65A9802ACEECC000C9BEA3 /* GSDesignSystem */,
 				7E65A96C2ACEEB7600C9BEA3 /* GSUtilities */,
 				7E65A94C2ACEEA3200C9BEA3 /* Products */,
+				7EF113752AE40DFA0068285A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,11 +204,19 @@
 			isa = PBXGroup;
 			children = (
 				7E65A9812ACEECC000C9BEA3 /* GSDesignSystem.h */,
+				7EA3688B2AE3BDA40092D91D /* GSTextField.swift */,
 				22CDB98E2AD7C9F400F22ADA /* GSText.swift */,
 				6E1559592ACEFFCA003972BD /* GSButton.swift */,
 				6E61F9322AD81A48001C7FF3 /* GSCanvas.swift */,
 			);
 			path = GSDesignSystem;
+			sourceTree = "<group>";
+		};
+		7EF113752AE40DFA0068285A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +293,12 @@
 				7E65A97B2ACEECC000C9BEA3 /* Sources */,
 				7E65A97C2ACEECC000C9BEA3 /* Frameworks */,
 				7E65A97D2ACEECC000C9BEA3 /* Resources */,
+				7EF1137A2AE40DFA0068285A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7EF113792AE40DFA0068285A /* PBXTargetDependency */,
 			);
 			name = GSDesignSystem;
 			productName = GSDesignSystem;
@@ -371,6 +405,7 @@
 				22CDB98F2AD7C9F400F22ADA /* GSText.swift in Sources */,
 				6E15595A2ACEFFCA003972BD /* GSButton.swift in Sources */,
 				6E61F9332AD81A48001C7FF3 /* GSCanvas.swift in Sources */,
+				7EA3688C2AE3BDA40092D91D /* GSTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +421,12 @@
 			isa = PBXTargetDependency;
 			target = 7E65A97E2ACEECC000C9BEA3 /* GSDesignSystem */;
 			targetProxy = 7E65A9832ACEECC000C9BEA3 /* PBXContainerItemProxy */;
+		};
+		7EF113792AE40DFA0068285A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 7E65A96A2ACEEB7600C9BEA3 /* GSUtilities */;
+			targetProxy = 7EF113782AE40DFA0068285A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
