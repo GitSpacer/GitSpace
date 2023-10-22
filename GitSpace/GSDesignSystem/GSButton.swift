@@ -9,7 +9,7 @@ import SwiftUI
 import GSUtilities
 
 public struct GSButton<Label: View>: View {
-    public enum Style {
+    public enum GSButtonStyle {
         case primary(ableState: AbleState)
         case secondary(ableState: AbleState)
         case tag(tagState: TagState)
@@ -38,12 +38,12 @@ public struct GSButton<Label: View>: View {
         }
     }
     
-    let style: Style
+    let style: GSButtonStyle
     let action: () -> Void
     let label: Label
     
     public init(
-        style: Style,
+        style: GSButtonStyle,
         action: @escaping () -> Void,
         @ViewBuilder label: () -> Label
     ) {
@@ -78,9 +78,9 @@ public struct GSButton<Label: View>: View {
 
 extension GSButton {
     struct GSButtonLabelModifier: ViewModifier {
-        let style: Style
+        let style: GSButtonStyle
         
-        init(_ style: Style) {
+        init(_ style: GSButtonStyle) {
             self.style = style
         }
         
@@ -140,10 +140,10 @@ extension GSButton {
 // MARK: - Foreground + Background Color Modifier
 extension GSButton.GSButtonLabelModifier {
     struct GSButtonLabelColorModifier: ViewModifier {
-        let style: GSButton.Style
+        let style: GSButton.GSButtonStyle
         @Environment(\.colorScheme) var colorScheme
         
-        init(_ style: GSButton.Style) {
+        init(_ style: GSButton.GSButtonStyle) {
             self.style = style
         }
         
