@@ -8,6 +8,11 @@
 import SwiftUI
 import GSUtilities
 
+public enum GSTab {
+    case starred
+    case activity
+}
+
 public struct GSButton<Label: View>: View {
     public enum GSButtonStyle {
         case primary(ableState: AbleState)
