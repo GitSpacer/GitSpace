@@ -53,7 +53,7 @@ extension GSCanvas {
                             .fill(backgroundColorByColorScheme)
                             .frame(maxWidth: .infinity)
                             .frame(minWidth: 50)
-                            .shadow(color: Color.gsGray2.opacity(0.3), radius: 6, x:0, y:2)
+                            .shadow(color: Color.gsGray2.opacity(0.3), radius: 6, x: 0, y: 2)
                     )
             }
         }
