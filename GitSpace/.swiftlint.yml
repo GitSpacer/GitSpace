@@ -19,6 +19,7 @@ included:
   - GitSpace
   - GSDesignSystem
   - GSUtilities
+  - GSChatFeature
 
 excluded:
   - Carthage
