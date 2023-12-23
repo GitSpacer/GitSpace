@@ -16,6 +16,13 @@
 		6E7E3BF52AD35A7700152EAE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7E3BF42AD35A7700152EAE /* FirebaseFirestore */; };
 		6E7E3BF72AD35A7700152EAE /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7E3BF62AD35A7700152EAE /* FirebaseFirestoreSwift */; };
 		6E7E3BF92AD35A7700152EAE /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7E3BF82AD35A7700152EAE /* FirebaseMessaging */; };
+		7E1FC3302B36AECE008866E7 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7E1FC32F2B36AECE008866E7 /* ComposableArchitecture */; };
+		7E1FC3362B36B050008866E7 /* GSUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A96B2ACEEB7600C9BEA3 /* GSUtilities.framework */; };
+		7E1FC3372B36B050008866E7 /* GSUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A96B2ACEEB7600C9BEA3 /* GSUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E1FC33B2B36B07C008866E7 /* GSUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A96B2ACEEB7600C9BEA3 /* GSUtilities.framework */; };
+		7E1FC33C2B36B07C008866E7 /* GSUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A96B2ACEEB7600C9BEA3 /* GSUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E1FC3402B36B142008866E7 /* GSDesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */; };
+		7E1FC3412B36B142008866E7 /* GSDesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7E65A94F2ACEEA3200C9BEA3 /* GitSpaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65A94E2ACEEA3200C9BEA3 /* GitSpaceApp.swift */; };
 		7E65A9512ACEEA3200C9BEA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65A9502ACEEA3200C9BEA3 /* ContentView.swift */; };
 		7E65A9532ACEEA3300C9BEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E65A9522ACEEA3300C9BEA3 /* Assets.xcassets */; };
@@ -28,9 +35,36 @@
 		7E65A9822ACEECC000C9BEA3 /* GSDesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E65A9812ACEECC000C9BEA3 /* GSDesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E65A9852ACEECC000C9BEA3 /* GSDesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */; };
 		7E65A9862ACEECC000C9BEA3 /* GSDesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E9311AC2B36ADBE00692ED7 /* GSChatFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9311A42B36ADBE00692ED7 /* GSChatFeature.framework */; };
+		7E9311B32B36ADBE00692ED7 /* GSChatFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9311B22B36ADBE00692ED7 /* GSChatFeatureTests.swift */; };
+		7E9311B42B36ADBE00692ED7 /* GSChatFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E9311A62B36ADBE00692ED7 /* GSChatFeature.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E9311B72B36ADBE00692ED7 /* GSChatFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9311A42B36ADBE00692ED7 /* GSChatFeature.framework */; };
+		7E9311B82B36ADBE00692ED7 /* GSChatFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9311A42B36ADBE00692ED7 /* GSChatFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E9311C12B36AE1F00692ED7 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9311C02B36AE1F00692ED7 /* ChatListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7E1FC3382B36B050008866E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E65A9432ACEEA3200C9BEA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E65A96A2ACEEB7600C9BEA3;
+			remoteInfo = GSUtilities;
+		};
+		7E1FC33D2B36B07C008866E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E65A9432ACEEA3200C9BEA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E65A96A2ACEEB7600C9BEA3;
+			remoteInfo = GSUtilities;
+		};
+		7E1FC3422B36B142008866E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E65A9432ACEEA3200C9BEA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E65A97E2ACEECC000C9BEA3;
+			remoteInfo = GSDesignSystem;
+		};
 		7E65A96F2ACEEB7600C9BEA3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7E65A9432ACEEA3200C9BEA3 /* Project object */;
@@ -45,15 +79,60 @@
 			remoteGlobalIDString = 7E65A97E2ACEECC000C9BEA3;
 			remoteInfo = GSDesignSystem;
 		};
+		7E9311AD2B36ADBE00692ED7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E65A9432ACEEA3200C9BEA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E9311A32B36ADBE00692ED7;
+			remoteInfo = GSChatFeature;
+		};
+		7E9311AF2B36ADBE00692ED7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E65A9432ACEEA3200C9BEA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E65A94A2ACEEA3200C9BEA3;
+			remoteInfo = GitSpace;
+		};
+		7E9311B52B36ADBE00692ED7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E65A9432ACEEA3200C9BEA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E9311A32B36ADBE00692ED7;
+			remoteInfo = GSChatFeature;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		7E1FC33A2B36B050008866E7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7E1FC3372B36B050008866E7 /* GSUtilities.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E1FC33F2B36B07C008866E7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7E1FC33C2B36B07C008866E7 /* GSUtilities.framework in Embed Frameworks */,
+				7E1FC3412B36B142008866E7 /* GSDesignSystem.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7E65A9762ACEEB7600C9BEA3 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7E9311B82B36ADBE00692ED7 /* GSChatFeature.framework in Embed Frameworks */,
 				7E65A9722ACEEB7600C9BEA3 /* GSUtilities.framework in Embed Frameworks */,
 				7E65A9862ACEECC000C9BEA3 /* GSDesignSystem.framework in Embed Frameworks */,
 			);
@@ -79,6 +158,11 @@
 		7E65A9782ACEEBBF00C9BEA3 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GSDesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E65A9812ACEECC000C9BEA3 /* GSDesignSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDesignSystem.h; sourceTree = "<group>"; };
+		7E9311A42B36ADBE00692ED7 /* GSChatFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GSChatFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E9311A62B36ADBE00692ED7 /* GSChatFeature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSChatFeature.h; sourceTree = "<group>"; };
+		7E9311AB2B36ADBE00692ED7 /* GSChatFeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GSChatFeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E9311B22B36ADBE00692ED7 /* GSChatFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSChatFeatureTests.swift; sourceTree = "<group>"; };
+		7E9311C02B36AE1F00692ED7 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +172,7 @@
 			files = (
 				6E7E3BF92AD35A7700152EAE /* FirebaseMessaging in Frameworks */,
 				6E7E3BF72AD35A7700152EAE /* FirebaseFirestoreSwift in Frameworks */,
+				7E9311B72B36ADBE00692ED7 /* GSChatFeature.framework in Frameworks */,
 				7E65A9852ACEECC000C9BEA3 /* GSDesignSystem.framework in Frameworks */,
 				6E7E3BF52AD35A7700152EAE /* FirebaseFirestore in Frameworks */,
 				7E65A95E2ACEEA5E00C9BEA3 /* ComposableArchitecture in Frameworks */,
@@ -106,6 +191,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E1FC3362B36B050008866E7 /* GSUtilities.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E9311A12B36ADBE00692ED7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E1FC3302B36AECE008866E7 /* ComposableArchitecture in Frameworks */,
+				7E1FC3402B36B142008866E7 /* GSDesignSystem.framework in Frameworks */,
+				7E1FC33B2B36B07C008866E7 /* GSUtilities.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E9311A82B36ADBE00692ED7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E9311AC2B36ADBE00692ED7 /* GSChatFeature.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +224,13 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
+		7E1FC32E2B36AECE008866E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7E65A9422ACEEA3200C9BEA3 = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +238,10 @@
 				7E65A94D2ACEEA3200C9BEA3 /* GitSpace */,
 				7E65A9802ACEECC000C9BEA3 /* GSDesignSystem */,
 				7E65A96C2ACEEB7600C9BEA3 /* GSUtilities */,
+				7E9311A52B36ADBE00692ED7 /* GSChatFeature */,
+				7E9311B12B36ADBE00692ED7 /* GSChatFeatureTests */,
 				7E65A94C2ACEEA3200C9BEA3 /* Products */,
+				7E1FC32E2B36AECE008866E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +251,8 @@
 				7E65A94B2ACEEA3200C9BEA3 /* GitSpace.app */,
 				7E65A96B2ACEEB7600C9BEA3 /* GSUtilities.framework */,
 				7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */,
+				7E9311A42B36ADBE00692ED7 /* GSChatFeature.framework */,
+				7E9311AB2B36ADBE00692ED7 /* GSChatFeatureTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,6 +306,31 @@
 			path = GSDesignSystem;
 			sourceTree = "<group>";
 		};
+		7E9311A52B36ADBE00692ED7 /* GSChatFeature */ = {
+			isa = PBXGroup;
+			children = (
+				7E9311A62B36ADBE00692ED7 /* GSChatFeature.h */,
+				7E9311BF2B36ADC700692ED7 /* ChatList */,
+			);
+			path = GSChatFeature;
+			sourceTree = "<group>";
+		};
+		7E9311B12B36ADBE00692ED7 /* GSChatFeatureTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E9311B22B36ADBE00692ED7 /* GSChatFeatureTests.swift */,
+			);
+			path = GSChatFeatureTests;
+			sourceTree = "<group>";
+		};
+		7E9311BF2B36ADC700692ED7 /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				7E9311C02B36AE1F00692ED7 /* ChatListView.swift */,
+			);
+			path = ChatList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -206,6 +347,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E65A9822ACEECC000C9BEA3 /* GSDesignSystem.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E93119F2B36ADBE00692ED7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E9311B42B36ADBE00692ED7 /* GSChatFeature.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +376,7 @@
 			dependencies = (
 				7E65A9702ACEEB7600C9BEA3 /* PBXTargetDependency */,
 				7E65A9842ACEECC000C9BEA3 /* PBXTargetDependency */,
+				7E9311B62B36ADBE00692ED7 /* PBXTargetDependency */,
 			);
 			name = GitSpace;
 			packageProductDependencies = (
@@ -265,15 +415,60 @@
 				7E65A97B2ACEECC000C9BEA3 /* Sources */,
 				7E65A97C2ACEECC000C9BEA3 /* Frameworks */,
 				7E65A97D2ACEECC000C9BEA3 /* Resources */,
+				7E1FC33A2B36B050008866E7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7E1FC3392B36B050008866E7 /* PBXTargetDependency */,
 			);
 			name = GSDesignSystem;
 			productName = GSDesignSystem;
 			productReference = 7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		7E9311A32B36ADBE00692ED7 /* GSChatFeature */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E9311BD2B36ADBE00692ED7 /* Build configuration list for PBXNativeTarget "GSChatFeature" */;
+			buildPhases = (
+				7E93119F2B36ADBE00692ED7 /* Headers */,
+				7E9311A02B36ADBE00692ED7 /* Sources */,
+				7E9311A12B36ADBE00692ED7 /* Frameworks */,
+				7E9311A22B36ADBE00692ED7 /* Resources */,
+				7E1FC33F2B36B07C008866E7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E1FC33E2B36B07C008866E7 /* PBXTargetDependency */,
+				7E1FC3432B36B142008866E7 /* PBXTargetDependency */,
+			);
+			name = GSChatFeature;
+			packageProductDependencies = (
+				7E1FC32F2B36AECE008866E7 /* ComposableArchitecture */,
+			);
+			productName = GSChatFeature;
+			productReference = 7E9311A42B36ADBE00692ED7 /* GSChatFeature.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7E9311AA2B36ADBE00692ED7 /* GSChatFeatureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E9311BE2B36ADBE00692ED7 /* Build configuration list for PBXNativeTarget "GSChatFeatureTests" */;
+			buildPhases = (
+				7E9311A72B36ADBE00692ED7 /* Sources */,
+				7E9311A82B36ADBE00692ED7 /* Frameworks */,
+				7E9311A92B36ADBE00692ED7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E9311AE2B36ADBE00692ED7 /* PBXTargetDependency */,
+				7E9311B02B36ADBE00692ED7 /* PBXTargetDependency */,
+			);
+			name = GSChatFeatureTests;
+			productName = GSChatFeatureTests;
+			productReference = 7E9311AB2B36ADBE00692ED7 /* GSChatFeatureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -282,7 +477,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					7E65A94A2ACEEA3200C9BEA3 = {
@@ -295,6 +490,14 @@
 					7E65A97E2ACEECC000C9BEA3 = {
 						CreatedOnToolsVersion = 14.2;
 						LastSwiftMigration = 1500;
+					};
+					7E9311A32B36ADBE00692ED7 = {
+						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
+					};
+					7E9311AA2B36ADBE00692ED7 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 7E65A94A2ACEEA3200C9BEA3;
 					};
 				};
 			};
@@ -318,6 +521,8 @@
 				7E65A94A2ACEEA3200C9BEA3 /* GitSpace */,
 				7E65A97E2ACEECC000C9BEA3 /* GSDesignSystem */,
 				7E65A96A2ACEEB7600C9BEA3 /* GSUtilities */,
+				7E9311A32B36ADBE00692ED7 /* GSChatFeature */,
+				7E9311AA2B36ADBE00692ED7 /* GSChatFeatureTests */,
 			);
 		};
 /* End PBXProject section */
@@ -341,6 +546,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7E65A97D2ACEECC000C9BEA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E9311A22B36ADBE00692ED7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E9311A92B36ADBE00692ED7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -401,9 +620,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7E9311A02B36ADBE00692ED7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E9311C12B36AE1F00692ED7 /* ChatListView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E9311A72B36ADBE00692ED7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E9311B32B36ADBE00692ED7 /* GSChatFeatureTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7E1FC3392B36B050008866E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E65A96A2ACEEB7600C9BEA3 /* GSUtilities */;
+			targetProxy = 7E1FC3382B36B050008866E7 /* PBXContainerItemProxy */;
+		};
+		7E1FC33E2B36B07C008866E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E65A96A2ACEEB7600C9BEA3 /* GSUtilities */;
+			targetProxy = 7E1FC33D2B36B07C008866E7 /* PBXContainerItemProxy */;
+		};
+		7E1FC3432B36B142008866E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E65A97E2ACEECC000C9BEA3 /* GSDesignSystem */;
+			targetProxy = 7E1FC3422B36B142008866E7 /* PBXContainerItemProxy */;
+		};
 		7E65A9702ACEEB7600C9BEA3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7E65A96A2ACEEB7600C9BEA3 /* GSUtilities */;
@@ -413,6 +663,21 @@
 			isa = PBXTargetDependency;
 			target = 7E65A97E2ACEECC000C9BEA3 /* GSDesignSystem */;
 			targetProxy = 7E65A9832ACEECC000C9BEA3 /* PBXContainerItemProxy */;
+		};
+		7E9311AE2B36ADBE00692ED7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E9311A32B36ADBE00692ED7 /* GSChatFeature */;
+			targetProxy = 7E9311AD2B36ADBE00692ED7 /* PBXContainerItemProxy */;
+		};
+		7E9311B02B36ADBE00692ED7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E65A94A2ACEEA3200C9BEA3 /* GitSpace */;
+			targetProxy = 7E9311AF2B36ADBE00692ED7 /* PBXContainerItemProxy */;
+		};
+		7E9311B62B36ADBE00692ED7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E9311A32B36ADBE00692ED7 /* GSChatFeature */;
+			targetProxy = 7E9311B52B36ADBE00692ED7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -741,6 +1006,131 @@
 			};
 			name = Release;
 		};
+		7E9311B92B36ADBE00692ED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_ASSET_PATHS = GitSpace/Assets.xcassets;
+				DEVELOPMENT_TEAM = 67M6ZS7KS6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Celan.GSChatFeature;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7E9311BA2B36ADBE00692ED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_ASSET_PATHS = GitSpace/Assets.xcassets;
+				DEVELOPMENT_TEAM = 67M6ZS7KS6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Celan.GSChatFeature;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7E9311BB2B36ADBE00692ED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67M6ZS7KS6;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Celan.GSChatFeatureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitSpace.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GitSpace";
+			};
+			name = Debug;
+		};
+		7E9311BC2B36ADBE00692ED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67M6ZS7KS6;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Celan.GSChatFeatureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitSpace.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GitSpace";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -776,6 +1166,24 @@
 			buildConfigurations = (
 				7E65A9882ACEECC000C9BEA3 /* Debug */,
 				7E65A9892ACEECC000C9BEA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E9311BD2B36ADBE00692ED7 /* Build configuration list for PBXNativeTarget "GSChatFeature" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E9311B92B36ADBE00692ED7 /* Debug */,
+				7E9311BA2B36ADBE00692ED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E9311BE2B36ADBE00692ED7 /* Build configuration list for PBXNativeTarget "GSChatFeatureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E9311BB2B36ADBE00692ED7 /* Debug */,
+				7E9311BC2B36ADBE00692ED7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -816,6 +1224,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6E7E3BF32AD35A7700152EAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		7E1FC32F2B36AECE008866E7 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E65A95C2ACEEA5E00C9BEA3 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
 		};
 		7E65A95D2ACEEA5E00C9BEA3 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
