@@ -8,13 +8,18 @@
 import SwiftUI
 import GSUtilities
 
+public enum GSTab {
+    case starred
+    case activity
+}
+
 public struct GSButton<Label: View>: View {
-    public enum Style {
+    public enum GSButtonStyle {
         case primary(ableState: AbleState)
         case secondary(ableState: AbleState)
         case tag(tagState: TagState)
         case plain(destructiveState: DestructiveState)
-        case tab
+        case tab(tabName: GSTab, selectedTab: Binding<GSTab>)
         
         public enum AbleState {
             case enabled	
@@ -38,12 +43,12 @@ public struct GSButton<Label: View>: View {
         }
     }
     
-    let style: Style
+    let style: GSButtonStyle
     let action: () -> Void
     let label: Label
     
     public init(
-        style: Style,
+        style: GSButtonStyle,
         action: @escaping () -> Void,
         @ViewBuilder label: () -> Label
     ) {
@@ -78,9 +83,9 @@ public struct GSButton<Label: View>: View {
 
 extension GSButton {
     struct GSButtonLabelModifier: ViewModifier {
-        let style: Style
+        let style: GSButtonStyle
         
-        init(_ style: Style) {
+        init(_ style: GSButtonStyle) {
             self.style = style
         }
         
@@ -126,12 +131,20 @@ extension GSButton {
                     )
                     .modifier(GSButtonLabelColorModifier(style))
                 
-            case .tab:
+            case let .tab(tabName, selectedTab):
                 content
                     .font(
                         .system(size: 20, weight: .medium)
                     )
                     .modifier(GSButtonLabelColorModifier(style))
+                    .overlay(alignment: .bottom) {
+                        if tabName == selectedTab.wrappedValue {
+                            Rectangle()
+                                .foregroundColor(.primary)
+                                .frame(height: 3)
+                                .offset(y: 8)
+                        }
+                    }
             }
         }
     }
@@ -140,10 +153,10 @@ extension GSButton {
 // MARK: - Foreground + Background Color Modifier
 extension GSButton.GSButtonLabelModifier {
     struct GSButtonLabelColorModifier: ViewModifier {
-        let style: GSButton.Style
+        let style: GSButton.GSButtonStyle
         @Environment(\.colorScheme) var colorScheme
         
-        init(_ style: GSButton.Style) {
+        init(_ style: GSButton.GSButtonStyle) {
             self.style = style
         }
         
@@ -166,7 +179,7 @@ extension GSButton.GSButtonLabelModifier {
                     case .disabled:
                         content
                             .foregroundColor(.white)
-                            .background(Color.gsGray1)
+                            .background(Color.gsGrey1)
                     }
                     
                 case let .tag(tagState):
@@ -228,7 +241,7 @@ extension GSButton.GSButtonLabelModifier {
                     case .disabled:
                         content
                             .foregroundColor(.white)
-                            .background(Color.gsGray1)
+                            .background(Color.gsGrey1)
                     }
                     
                 case let .tag(tagState):
@@ -236,7 +249,7 @@ extension GSButton.GSButtonLabelModifier {
                     case .idle:
                         content
                             .foregroundColor(.white)
-                            .background(Color.gsGray2)
+                            .background(Color.gsGrey2)
                         
                     case let .editing(activityState):
                         switch activityState {
@@ -335,10 +348,15 @@ struct GSButton_Previews: PreviewProvider {
             } label: {
                 Text("Plain Destructive")
             }
-            GSButton(style: .tab) {
+            GSButton(style: .tab(tabName: .starred, selectedTab: .constant(.starred))) {
                 
             } label: {
-                Text("Tab")
+                Text("Tab Starred")
+            }
+            GSButton(style: .tab(tabName: .activity, selectedTab: .constant(.starred))) {
+                
+            } label: {
+                Text("Tab Activity")
             }
         }
     }

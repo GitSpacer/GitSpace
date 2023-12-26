@@ -76,13 +76,6 @@ public struct GSText: View {
     }
 }
 
-// !!!: AssetColor와 CodeBase Color 중 어떤 방식으로 할지 논의 필요!
-extension Color {
-    static let gsGray1 = Color("GSGray1")
-    static let gsGray2 = Color("GSGray2")
-    static let gsGray3 = Color("GSGray3")
-}
-
 #Preview {
     VStack {
         GSText(style: .title1, string: "Title1")
