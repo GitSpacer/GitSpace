@@ -35,6 +35,7 @@
 		7E65A9822ACEECC000C9BEA3 /* GSDesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E65A9812ACEECC000C9BEA3 /* GSDesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E65A9852ACEECC000C9BEA3 /* GSDesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */; };
 		7E65A9862ACEECC000C9BEA3 /* GSDesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E74D2792B3D49BF0039602A /* ChatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74D2782B3D49BF0039602A /* ChatDetailView.swift */; };
 		7E9311AC2B36ADBE00692ED7 /* GSChatFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9311A42B36ADBE00692ED7 /* GSChatFeature.framework */; };
 		7E9311B32B36ADBE00692ED7 /* GSChatFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9311B22B36ADBE00692ED7 /* GSChatFeatureTests.swift */; };
 		7E9311B42B36ADBE00692ED7 /* GSChatFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E9311A62B36ADBE00692ED7 /* GSChatFeature.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -158,6 +159,7 @@
 		7E65A9782ACEEBBF00C9BEA3 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GSDesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E65A9812ACEECC000C9BEA3 /* GSDesignSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDesignSystem.h; sourceTree = "<group>"; };
+		7E74D2782B3D49BF0039602A /* ChatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailView.swift; sourceTree = "<group>"; };
 		7E9311A42B36ADBE00692ED7 /* GSChatFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GSChatFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9311A62B36ADBE00692ED7 /* GSChatFeature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSChatFeature.h; sourceTree = "<group>"; };
 		7E9311AB2B36ADBE00692ED7 /* GSChatFeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GSChatFeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -310,7 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				7E9311A62B36ADBE00692ED7 /* GSChatFeature.h */,
-				7E9311BF2B36ADC700692ED7 /* ChatList */,
+				7E9311BF2B36ADC700692ED7 /* ChatUI */,
 			);
 			path = GSChatFeature;
 			sourceTree = "<group>";
@@ -323,12 +325,13 @@
 			path = GSChatFeatureTests;
 			sourceTree = "<group>";
 		};
-		7E9311BF2B36ADC700692ED7 /* ChatList */ = {
+		7E9311BF2B36ADC700692ED7 /* ChatUI */ = {
 			isa = PBXGroup;
 			children = (
 				7E9311C02B36AE1F00692ED7 /* ChatListView.swift */,
+				7E74D2782B3D49BF0039602A /* ChatDetailView.swift */,
 			);
-			path = ChatList;
+			path = ChatUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -625,6 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E9311C12B36AE1F00692ED7 /* ChatListView.swift in Sources */,
+				7E74D2792B3D49BF0039602A /* ChatDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
