@@ -1,6 +1,6 @@
 import Foundation
 
-struct Repository: GSModel, Equatable {
+struct Repository: Codable, Identifiable, Equatable {
   static func == (lhs: Repository, rhs: Repository) -> Bool {
     return lhs.id == rhs.id
   }
