@@ -37,7 +37,7 @@ extension GSCanvas {
             case .light:
                 Color.white
             case.dark:
-                Color.gsGray2
+                Color.gsGrey2
             default:
                 Color.white
             }

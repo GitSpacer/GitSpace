@@ -16,6 +16,8 @@
 		6E7E3BF52AD35A7700152EAE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7E3BF42AD35A7700152EAE /* FirebaseFirestore */; };
 		6E7E3BF72AD35A7700152EAE /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7E3BF62AD35A7700152EAE /* FirebaseFirestoreSwift */; };
 		6E7E3BF92AD35A7700152EAE /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7E3BF82AD35A7700152EAE /* FirebaseMessaging */; };
+		6EB4CA362AE575970050A912 /* GSUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A96B2ACEEB7600C9BEA3 /* GSUtilities.framework */; platformFilter = ios; };
+		6EB4CA372AE575970050A912 /* GSUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A96B2ACEEB7600C9BEA3 /* GSUtilities.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7E65A94F2ACEEA3200C9BEA3 /* GitSpaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65A94E2ACEEA3200C9BEA3 /* GitSpaceApp.swift */; };
 		7E65A9512ACEEA3200C9BEA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65A9502ACEEA3200C9BEA3 /* ContentView.swift */; };
 		7E65A9532ACEEA3300C9BEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E65A9522ACEEA3300C9BEA3 /* Assets.xcassets */; };
@@ -31,6 +33,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6EB4CA382AE575970050A912 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E65A9432ACEEA3200C9BEA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E65A96A2ACEEB7600C9BEA3;
+			remoteInfo = GSUtilities;
+		};
 		7E65A96F2ACEEB7600C9BEA3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7E65A9432ACEEA3200C9BEA3 /* Project object */;
@@ -48,6 +57,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		6EB4CA3A2AE575970050A912 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6EB4CA372AE575970050A912 /* GSUtilities.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7E65A9762ACEEB7600C9BEA3 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -106,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EB4CA362AE575970050A912 /* GSUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +141,13 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
+		6EB4CA352AE575970050A912 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7E65A9422ACEEA3200C9BEA3 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +156,7 @@
 				7E65A9802ACEECC000C9BEA3 /* GSDesignSystem */,
 				7E65A96C2ACEEB7600C9BEA3 /* GSUtilities */,
 				7E65A94C2ACEEA3200C9BEA3 /* Products */,
+				6EB4CA352AE575970050A912 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -265,10 +294,12 @@
 				7E65A97B2ACEECC000C9BEA3 /* Sources */,
 				7E65A97C2ACEECC000C9BEA3 /* Frameworks */,
 				7E65A97D2ACEECC000C9BEA3 /* Resources */,
+				6EB4CA3A2AE575970050A912 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6EB4CA392AE575970050A912 /* PBXTargetDependency */,
 			);
 			name = GSDesignSystem;
 			productName = GSDesignSystem;
@@ -404,6 +435,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6EB4CA392AE575970050A912 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 7E65A96A2ACEEB7600C9BEA3 /* GSUtilities */;
+			targetProxy = 6EB4CA382AE575970050A912 /* PBXContainerItemProxy */;
+		};
 		7E65A9702ACEEB7600C9BEA3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7E65A96A2ACEEB7600C9BEA3 /* GSUtilities */;
