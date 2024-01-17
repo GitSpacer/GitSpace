@@ -37,6 +37,7 @@
 		6EF1F4AF2B57D0CD00CD247D /* RepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4A62B57D0CD00CD247D /* RepositoryResponse.swift */; };
 		6EF1F4B22B57D34D00CD247D /* FirestoreSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4B12B57D34D00CD247D /* FirestoreSchema.swift */; };
 		6EF1F4B42B57D42A00CD247D /* FirestoreField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4B32B57D42A00CD247D /* FirestoreField.swift */; };
+		6EF1F4B62B57D46700CD247D /* FirestoreCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4B52B57D46700CD247D /* FirestoreCollection.swift */; };
 		7E65A94F2ACEEA3200C9BEA3 /* GitSpaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65A94E2ACEEA3200C9BEA3 /* GitSpaceApp.swift */; };
 		7E65A9512ACEEA3200C9BEA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65A9502ACEEA3200C9BEA3 /* ContentView.swift */; };
 		7E65A9532ACEEA3300C9BEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E65A9522ACEEA3300C9BEA3 /* Assets.xcassets */; };
@@ -109,6 +110,7 @@
 		6EF1F4A62B57D0CD00CD247D /* RepositoryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryResponse.swift; sourceTree = "<group>"; };
 		6EF1F4B12B57D34D00CD247D /* FirestoreSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreSchema.swift; sourceTree = "<group>"; };
 		6EF1F4B32B57D42A00CD247D /* FirestoreField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreField.swift; sourceTree = "<group>"; };
+		6EF1F4B52B57D46700CD247D /* FirestoreCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreCollection.swift; sourceTree = "<group>"; };
 		7E65A94B2ACEEA3200C9BEA3 /* GitSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E65A94E2ACEEA3200C9BEA3 /* GitSpaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSpaceApp.swift; sourceTree = "<group>"; };
 		7E65A9502ACEEA3200C9BEA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		6E2AAEA12B50FEDD00CBEAC7 /* Enumeration */ = {
 			isa = PBXGroup;
 			children = (
+				6EF1F4B52B57D46700CD247D /* FirestoreCollection.swift */,
 			);
 			path = Enumeration;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				6EF1F4902B57CE4600CD247D /* Report.swift in Sources */,
 				6EF1F4912B57CE4600CD247D /* Message.swift in Sources */,
 				6EF1F4932B57CE4600CD247D /* Repository.swift in Sources */,
+				6EF1F4B62B57D46700CD247D /* FirestoreCollection.swift in Sources */,
 				6EF1F4A82B57D0CD00CD247D /* Event.swift in Sources */,
 				6EF1F4AA2B57D0CD00CD247D /* GithubUser.swift in Sources */,
 				6EF1F4A92B57D0CD00CD247D /* ContributorProfile.swift in Sources */,
