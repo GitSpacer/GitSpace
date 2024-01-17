@@ -47,6 +47,7 @@
 		6EF1F4C42B57F00A00CD247D /* LiveFirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4C32B57F00A00CD247D /* LiveFirestoreService.swift */; };
 		6EF1F4C72B57F0DD00CD247D /* GSModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4C62B57F0DD00CD247D /* GSModelError.swift */; };
 		6EF1F4CA2B57F12C00CD247D /* GSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4C92B57F12C00CD247D /* GSError.swift */; };
+		6EF1F4CC2B57F76500CD247D /* Query+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4CB2B57F76500CD247D /* Query+.swift */; };
 		7E65A94F2ACEEA3200C9BEA3 /* GitSpaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65A94E2ACEEA3200C9BEA3 /* GitSpaceApp.swift */; };
 		7E65A9512ACEEA3200C9BEA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65A9502ACEEA3200C9BEA3 /* ContentView.swift */; };
 		7E65A9532ACEEA3300C9BEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E65A9522ACEEA3300C9BEA3 /* Assets.xcassets */; };
@@ -127,6 +128,7 @@
 		6EF1F4C32B57F00A00CD247D /* LiveFirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFirestoreService.swift; sourceTree = "<group>"; };
 		6EF1F4C62B57F0DD00CD247D /* GSModelError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSModelError.swift; sourceTree = "<group>"; };
 		6EF1F4C92B57F12C00CD247D /* GSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSError.swift; sourceTree = "<group>"; };
+		6EF1F4CB2B57F76500CD247D /* Query+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query+.swift"; sourceTree = "<group>"; };
 		7E65A94B2ACEEA3200C9BEA3 /* GitSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E65A94E2ACEEA3200C9BEA3 /* GitSpaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSpaceApp.swift; sourceTree = "<group>"; };
 		7E65A9502ACEEA3200C9BEA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 			children = (
 				7E65A9782ACEEBBF00C9BEA3 /* String+.swift */,
 				6E61F9342AD81CC6001C7FF3 /* Color+.swift */,
+				6EF1F4CB2B57F76500CD247D /* Query+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				6EF1F4AF2B57D0CD00CD247D /* RepositoryResponse.swift in Sources */,
 				6E2AAEA42B5106BE00CBEAC7 /* GSModel.swift in Sources */,
 				6EF1F4BE2B57EC4600CD247D /* FirestoreError.swift in Sources */,
+				6EF1F4CC2B57F76500CD247D /* Query+.swift in Sources */,
 				6EF1F4922B57CE4600CD247D /* Chat.swift in Sources */,
 				6EF1F4902B57CE4600CD247D /* Report.swift in Sources */,
 				6EF1F4912B57CE4600CD247D /* Message.swift in Sources */,
