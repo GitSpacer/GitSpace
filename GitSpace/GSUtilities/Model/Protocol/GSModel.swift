@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  GSModel.swift
 //  GSUtilities
 //
 //  Created by 원태영 on 1/12/24.

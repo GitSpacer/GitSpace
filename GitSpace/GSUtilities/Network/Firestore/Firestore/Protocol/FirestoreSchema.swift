@@ -16,4 +16,3 @@ extension FirestoreSchema where Self: RawRepresentable, Self.RawValue == String 
     return self.rawValue
   }
 }
-

@@ -8,5 +8,5 @@ struct Chat: GSModel {
   var lastContentDate: Date               // 마지막 메세지 날짜
   let knockContent: String                // 노크 메세지 내용
   let knockContentDate: Date              // 노크 메세지 날짜
-  var unreadMessageCount: [String : Int]  // 읽지 않은 메시지 갯수 (userID : 읽지 않은 메시지 갯수)
+  var unreadMessageCount: [String: Int]  // 읽지 않은 메시지 갯수 (userID : 읽지 않은 메시지 갯수)
 }
