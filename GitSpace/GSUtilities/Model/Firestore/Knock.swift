@@ -2,8 +2,8 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct Knock: GSModel, Hashable {
-  var id: String = UUID().uuidString
+public struct Knock: GSModel, Hashable {
+  public var id: String = UUID().uuidString
   var knockedDate: Timestamp
   var knockMessage: String
   var knockStatus: String

@@ -1,8 +1,8 @@
 import Foundation
 import FirebaseFirestore
 
-struct Report: GSModel {
-  var id: String = UUID().uuidString
+public struct Report: GSModel {
+  public var id: String = UUID().uuidString
   var reason: String
   var reporterID: String
   var targetUserID: String

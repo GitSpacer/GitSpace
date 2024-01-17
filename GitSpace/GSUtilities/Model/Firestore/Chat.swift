@@ -1,7 +1,7 @@
 import Foundation
 
-struct Chat: GSModel {
-  let id: String                          // 채팅방 ID
+public struct Chat: GSModel {
+  public let id: String                          // 채팅방 ID
   let createdDate: Date                   // 생성 날짜
   let joinedMemberIDs: [String]           // 채팅방에 참여한 유저 ID 리스트
   var lastContent: String                 // 마지막 메세지 내용

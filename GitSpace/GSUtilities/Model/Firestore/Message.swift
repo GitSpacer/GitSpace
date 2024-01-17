@@ -1,7 +1,7 @@
 import Foundation
 
-struct Message: GSModel {
-  let id: String            // 메세지 ID
+public struct Message: GSModel {
+  public let id: String            // 메세지 ID
   let senderID: String      // 메세지 작성자 유저 ID
   let textContent: String   // 메세지 내용
   let imageContent: String? // 메세지에 첨부한 이미지

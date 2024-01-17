@@ -1,8 +1,8 @@
 import Foundation
 
-struct UserInfo : GSModel, Equatable {
+public struct UserInfo: GSModel, Equatable {
   // MARK: -Firestore Properties
-  let id: String                  // 유저 ID (Firebase Auth UID)
+  public let id: String           // 유저 ID (Firebase Auth UID)
   let createdDate: Date           // 유저 생성일시
   var deviceToken: String         // 유저 기기 토큰
   var blockedUserIDs: [String]    // 차단한 유저 ID 리스트

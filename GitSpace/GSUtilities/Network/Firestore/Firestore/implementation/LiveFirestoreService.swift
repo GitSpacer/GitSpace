@@ -5,7 +5,7 @@ public final class LiveFirestoreService: FirestoreService {
   private let firestore: Firestore
   
   // MARK: - Initializer
-  init(firestore: Firestore = .firestore()) {
+  public init(firestore: Firestore = .firestore()) {
     self.firestore = firestore
   }
 }
