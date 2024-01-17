@@ -30,6 +30,7 @@
 		7E65A9822ACEECC000C9BEA3 /* GSDesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E65A9812ACEECC000C9BEA3 /* GSDesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E65A9852ACEECC000C9BEA3 /* GSDesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */; };
 		7E65A9862ACEECC000C9BEA3 /* GSDesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7EECAF112B37F5580073A073 /* ApiTransferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EECAF102B37F5580073A073 /* ApiTransferable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		7E65A9782ACEEBBF00C9BEA3 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GSDesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E65A9812ACEECC000C9BEA3 /* GSDesignSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDesignSystem.h; sourceTree = "<group>"; };
+		7EECAF102B37F5580073A073 /* ApiTransferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTransferable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				7E65A96D2ACEEB7600C9BEA3 /* GitSpace_Utilities.h */,
+				7EECAF0F2B37F5180073A073 /* NetworkClients */,
 				6E652F432AD8218C008F8151 /* Constant */,
 				7E65A9772ACEEB9900C9BEA3 /* Extensions */,
 			);
@@ -217,6 +220,14 @@
 				6E61F9322AD81A48001C7FF3 /* GSCanvas.swift */,
 			);
 			path = GSDesignSystem;
+			sourceTree = "<group>";
+		};
+		7EECAF0F2B37F5180073A073 /* NetworkClients */ = {
+			isa = PBXGroup;
+			children = (
+				7EECAF102B37F5580073A073 /* ApiTransferable.swift */,
+			);
+			path = NetworkClients;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,6 +430,7 @@
 				7E65A9792ACEEBBF00C9BEA3 /* String+.swift in Sources */,
 				6E61F9352AD81CC6001C7FF3 /* Color+.swift in Sources */,
 				6E652F452AD821B1008F8151 /* Constant.swift in Sources */,
+				7EECAF112B37F5580073A073 /* ApiTransferable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
