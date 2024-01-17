@@ -1,5 +1,5 @@
-enum FirestoreField {
-  enum Chat: String, FirestoreFieldProtocol {
+public enum FirestoreField {
+  public enum Chat: String, FirestoreFieldProtocol {
     case id
     case createdDate
     case joinedMemberIDs
@@ -10,7 +10,7 @@ enum FirestoreField {
     case unreadMessageCount
   }
   
-  enum Knock: String, FirestoreFieldProtocol {
+  public enum Knock: String, FirestoreFieldProtocol {
     case id
     case knockedDate
     case knockMessage
@@ -26,7 +26,7 @@ enum FirestoreField {
     case declinedDate
   }
   
-  enum Message: String, FirestoreFieldProtocol {
+  public enum Message: String, FirestoreFieldProtocol {
     case id
     case senderID
     case textContent
@@ -35,7 +35,7 @@ enum FirestoreField {
     case isRead
   }
   
-  enum Report: String, FirestoreFieldProtocol {
+  public enum Report: String, FirestoreFieldProtocol {
     case id
     case reason
     case reporterID
@@ -45,14 +45,14 @@ enum FirestoreField {
     case type
   }
   
-  enum Tag: String, FirestoreFieldProtocol {
+  public enum Tag: String, FirestoreFieldProtocol {
     case id
     case tagName
     case repositories
     case isSelected
   }
   
-  enum UserInfo: String, FirestoreFieldProtocol {
+  public enum UserInfo: String, FirestoreFieldProtocol {
     case id
     case createdDate
     case deviceToken

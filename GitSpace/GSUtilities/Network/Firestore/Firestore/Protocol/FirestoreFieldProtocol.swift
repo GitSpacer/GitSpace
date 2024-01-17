@@ -1,1 +1,1 @@
-protocol FirestoreFieldProtocol: FirestoreSchema, CaseIterable { }
+public protocol FirestoreFieldProtocol: FirestoreSchema, CaseIterable { }

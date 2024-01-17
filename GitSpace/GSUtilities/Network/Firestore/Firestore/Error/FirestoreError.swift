@@ -1,6 +1,6 @@
 import FirebaseFirestore
 
-enum FirestoreError: GSError {
+public enum FirestoreError: GSError {
   case encodeError(from: String)
   case decodeError(from: String)
   case noDocument(from: String, document: DocumentSnapshot)
@@ -9,7 +9,7 @@ enum FirestoreError: GSError {
   case unknown(from: String)
 }
 
-extension FirestoreError {
+public extension FirestoreError {
   var errorDescription: String {
     switch self {
       case .encodeError(let from):

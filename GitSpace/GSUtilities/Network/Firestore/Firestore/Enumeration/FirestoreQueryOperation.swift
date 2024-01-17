@@ -1,5 +1,5 @@
-enum FirestoreQueryOperation {
-  enum SortType {
+public enum FirestoreQueryOperation {
+  public enum SortType {
     case ascending
     case descending
   }

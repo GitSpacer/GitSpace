@@ -1,6 +1,6 @@
 import FirebaseFirestore
 
-protocol FirestoreService {
+public protocol FirestoreService {
   func create<T: GSModel>(
     col collection: FirestoreCollection,
     model: T
