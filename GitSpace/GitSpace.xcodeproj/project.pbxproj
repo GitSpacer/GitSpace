@@ -41,6 +41,9 @@
 		6EF1F4B82B57D8A500CD247D /* FirestoreField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4B72B57D8A500CD247D /* FirestoreField.swift */; };
 		6EF1F4BA2B57EA7F00CD247D /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4B92B57EA7F00CD247D /* FirestoreService.swift */; };
 		6EF1F4BC2B57EACB00CD247D /* FirestoreQueryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4BB2B57EACB00CD247D /* FirestoreQueryOperation.swift */; };
+		6EF1F4BE2B57EC4600CD247D /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4BD2B57EC4600CD247D /* FirestoreError.swift */; };
+		6EF1F4C02B57ED0D00CD247D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF1F4BF2B57ED0D00CD247D /* FirebaseFirestore */; };
+		6EF1F4C22B57ED0D00CD247D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF1F4C12B57ED0D00CD247D /* FirebaseFirestoreSwift */; };
 		7E65A94F2ACEEA3200C9BEA3 /* GitSpaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65A94E2ACEEA3200C9BEA3 /* GitSpaceApp.swift */; };
 		7E65A9512ACEEA3200C9BEA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65A9502ACEEA3200C9BEA3 /* ContentView.swift */; };
 		7E65A9532ACEEA3300C9BEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E65A9522ACEEA3300C9BEA3 /* Assets.xcassets */; };
@@ -117,6 +120,7 @@
 		6EF1F4B72B57D8A500CD247D /* FirestoreField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreField.swift; sourceTree = "<group>"; };
 		6EF1F4B92B57EA7F00CD247D /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		6EF1F4BB2B57EACB00CD247D /* FirestoreQueryOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreQueryOperation.swift; sourceTree = "<group>"; };
+		6EF1F4BD2B57EC4600CD247D /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreError.swift; sourceTree = "<group>"; };
 		7E65A94B2ACEEA3200C9BEA3 /* GitSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E65A94E2ACEEA3200C9BEA3 /* GitSpaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSpaceApp.swift; sourceTree = "<group>"; };
 		7E65A9502ACEEA3200C9BEA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF1F4C02B57ED0D00CD247D /* FirebaseFirestore in Frameworks */,
+				6EF1F4C22B57ED0D00CD247D /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +197,7 @@
 		6E2AAEA02B50FEC200CBEAC7 /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				6EF1F4BD2B57EC4600CD247D /* FirestoreError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -452,6 +459,10 @@
 			dependencies = (
 			);
 			name = GSDesignSystem;
+			packageProductDependencies = (
+				6EF1F4BF2B57ED0D00CD247D /* FirebaseFirestore */,
+				6EF1F4C12B57ED0D00CD247D /* FirebaseFirestoreSwift */,
+			);
 			productName = GSDesignSystem;
 			productReference = 7E65A97F2ACEECC000C9BEA3 /* GSDesignSystem.framework */;
 			productType = "com.apple.product-type.framework";
@@ -583,6 +594,7 @@
 				6EF1F4952B57CE4600CD247D /* Knock.swift in Sources */,
 				6EF1F4AF2B57D0CD00CD247D /* RepositoryResponse.swift in Sources */,
 				6E2AAEA42B5106BE00CBEAC7 /* Model.swift in Sources */,
+				6EF1F4BE2B57EC4600CD247D /* FirestoreError.swift in Sources */,
 				6EF1F4922B57CE4600CD247D /* Chat.swift in Sources */,
 				6EF1F4902B57CE4600CD247D /* Report.swift in Sources */,
 				6EF1F4912B57CE4600CD247D /* Message.swift in Sources */,
@@ -1027,6 +1039,16 @@
 			productName = FirebaseFirestore;
 		};
 		6EF1F49A2B57CF0100CD247D /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E7E3BF32AD35A7700152EAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		6EF1F4BF2B57ED0D00CD247D /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E7E3BF32AD35A7700152EAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		6EF1F4C12B57ED0D00CD247D /* FirebaseFirestoreSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6E7E3BF32AD35A7700152EAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;

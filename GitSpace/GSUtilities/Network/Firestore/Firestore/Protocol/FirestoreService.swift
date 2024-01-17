@@ -32,4 +32,3 @@ protocol FirestoreService {
     docID documentID: String
   )
 }
-
