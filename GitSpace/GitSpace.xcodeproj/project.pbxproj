@@ -35,6 +35,8 @@
 		6EF1F4AD2B57D0CD00CD247D /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4A42B57D0CD00CD247D /* UserResponse.swift */; };
 		6EF1F4AE2B57D0CD00CD247D /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4A52B57D0CD00CD247D /* AppInfo.swift */; };
 		6EF1F4AF2B57D0CD00CD247D /* RepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4A62B57D0CD00CD247D /* RepositoryResponse.swift */; };
+		6EF1F4B22B57D34D00CD247D /* FirestoreSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4B12B57D34D00CD247D /* FirestoreSchema.swift */; };
+		6EF1F4B42B57D42A00CD247D /* FirestoreField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4B32B57D42A00CD247D /* FirestoreField.swift */; };
 		7E65A94F2ACEEA3200C9BEA3 /* GitSpaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65A94E2ACEEA3200C9BEA3 /* GitSpaceApp.swift */; };
 		7E65A9512ACEEA3200C9BEA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65A9502ACEEA3200C9BEA3 /* ContentView.swift */; };
 		7E65A9532ACEEA3300C9BEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E65A9522ACEEA3300C9BEA3 /* Assets.xcassets */; };
@@ -105,6 +107,8 @@
 		6EF1F4A42B57D0CD00CD247D /* UserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		6EF1F4A52B57D0CD00CD247D /* AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		6EF1F4A62B57D0CD00CD247D /* RepositoryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryResponse.swift; sourceTree = "<group>"; };
+		6EF1F4B12B57D34D00CD247D /* FirestoreSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreSchema.swift; sourceTree = "<group>"; };
+		6EF1F4B32B57D42A00CD247D /* FirestoreField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreField.swift; sourceTree = "<group>"; };
 		7E65A94B2ACEEA3200C9BEA3 /* GitSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E65A94E2ACEEA3200C9BEA3 /* GitSpaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSpaceApp.swift; sourceTree = "<group>"; };
 		7E65A9502ACEEA3200C9BEA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -183,11 +187,11 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
-		6E2AAEA12B50FEDD00CBEAC7 /* Enum */ = {
+		6E2AAEA12B50FEDD00CBEAC7 /* Enumeration */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Enum;
+			path = Enumeration;
 			sourceTree = "<group>";
 		};
 		6E2AAEA22B50FEEA00CBEAC7 /* Impl */ = {
@@ -242,6 +246,15 @@
 			path = Github;
 			sourceTree = "<group>";
 		};
+		6EF1F4B02B57D32200CD247D /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				6EF1F4B12B57D34D00CD247D /* FirestoreSchema.swift */,
+				6EF1F4B32B57D42A00CD247D /* FirestoreField.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		6EF97FDC2B4E7764007C7932 /* Firestore */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,7 +274,8 @@
 		6EF97FDE2B4E777D007C7932 /* Firestore */ = {
 			isa = PBXGroup;
 			children = (
-				6E2AAEA12B50FEDD00CBEAC7 /* Enum */,
+				6EF1F4B02B57D32200CD247D /* Protocol */,
+				6E2AAEA12B50FEDD00CBEAC7 /* Enumeration */,
 				6E2AAEA02B50FEC200CBEAC7 /* Error */,
 				6E2AAEA22B50FEEA00CBEAC7 /* Impl */,
 			);
@@ -546,6 +560,8 @@
 				6EF1F4AE2B57D0CD00CD247D /* AppInfo.swift in Sources */,
 				7E65A9792ACEEBBF00C9BEA3 /* String+.swift in Sources */,
 				6EF1F4A72B57D0CD00CD247D /* FollowingResponse.swift in Sources */,
+				6EF1F4B42B57D42A00CD247D /* FirestoreField.swift in Sources */,
+				6EF1F4B22B57D34D00CD247D /* FirestoreSchema.swift in Sources */,
 				6E61F9352AD81CC6001C7FF3 /* Color+.swift in Sources */,
 				6E652F452AD821B1008F8151 /* Constant.swift in Sources */,
 				6EF1F48F2B57CE4600CD247D /* UserInfo.swift in Sources */,
