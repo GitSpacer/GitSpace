@@ -1,10 +1,3 @@
-//
-//  GSModel.swift
-//  GSUtilities
-//
-//  Created by 원태영 on 1/12/24.
-//
-
 public protocol GSModel: Codable, Identifiable {
   typealias Fields = [String: Any]
   
