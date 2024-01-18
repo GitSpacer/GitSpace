@@ -1,3 +1,5 @@
+import GSUtilities
+
 enum GSModelError: GSError {
   case castIDFailed(from: String)
 }

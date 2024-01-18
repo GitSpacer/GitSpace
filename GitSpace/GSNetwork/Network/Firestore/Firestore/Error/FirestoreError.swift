@@ -1,4 +1,5 @@
 import FirebaseFirestore
+import GSUtilities
 
 public enum FirestoreError: GSError {
   case encodeError(from: String)
