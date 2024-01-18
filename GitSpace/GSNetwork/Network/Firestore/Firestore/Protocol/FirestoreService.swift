@@ -2,33 +2,33 @@ import FirebaseFirestore
 
 public protocol FirestoreService {
   func create<T: GSModel>(
-    col collection: FirestoreCollection,
-    model: T
+    in collection: FirestoreCollection,
+    with model: T
   ) throws
   
   func fetch<T: GSModel>(
-    col collection: FirestoreCollection,
-    docID documentID: String
+    from collection: FirestoreCollection,
+    at documentID: String
   ) async throws -> T
   
   func fetch<T: GSModel>(
-    col collection: FirestoreCollection
+    from collection: FirestoreCollection
   ) async throws -> [T]
   
   func fetch<T: GSModel, U: FirestoreFieldProtocol>(
-    col collection: FirestoreCollection,
-    field firestoreField: U,
-    operation: FirestoreQueryOperation
+    from collection: FirestoreCollection,
+    where firestoreField: U,
+    satisfies operation: FirestoreQueryOperation
   ) async throws -> [T]
   
   func update<T: GSModel, U: FirestoreFieldProtocol>(
-    col collection: FirestoreCollection,
-    model: T,
-    updateFields: [U]
+    in collection: FirestoreCollection,
+    with model: T,
+    updating updateFields: [U]
   ) throws
   
   func delete(
-    col colledtion: FirestoreCollection,
-    docID documentID: String
+    in collection: FirestoreCollection,
+    at documentID: String
   )
 }

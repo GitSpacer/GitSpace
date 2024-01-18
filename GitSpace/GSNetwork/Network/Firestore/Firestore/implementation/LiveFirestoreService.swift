@@ -20,8 +20,8 @@ extension LiveFirestoreService {
    - Returns:
    */
   public func create<T: GSModel>(
-    col collection: FirestoreCollection,
-    model: T
+    in collection: FirestoreCollection,
+    with model: T
   ) throws {
     guard let id = model.id as? String else {
       throw GSModelError.castIDFailed(from: #function)
@@ -46,8 +46,8 @@ extension LiveFirestoreService {
    - Returns: 지정된 타입의 모델을 반환합니다.
    */
   public func fetch<T: GSModel>(
-    col collection: FirestoreCollection,
-    docID documentID: String
+    from collection: FirestoreCollection,
+    at documentID: String
   ) async throws -> T {
     let path: DocumentReference = getDocumentPath(
       col: collection,
@@ -68,7 +68,7 @@ extension LiveFirestoreService {
    - Returns: 지정된 타입의 모델 배열을 반환합니다.
    */
   public func fetch<T: GSModel>(
-    col collection: FirestoreCollection
+    from collection: FirestoreCollection
   ) async throws -> [T] {
     let path: CollectionReference = getCollectionPath(col: collection)
     
@@ -82,9 +82,9 @@ extension LiveFirestoreService {
   }
   
   public func fetch<T: GSModel, U: FirestoreFieldProtocol>(
-    col collection: FirestoreCollection,
-    field firestoreField: U,
-    operation: FirestoreQueryOperation
+    from collection: FirestoreCollection,
+    where firestoreField: U,
+    satisfies operation: FirestoreQueryOperation
   ) async throws -> [T] {
     let path: CollectionReference = getCollectionPath(col: collection)
     
@@ -102,9 +102,9 @@ extension LiveFirestoreService {
   }
   
   public func update<T: GSModel, U: FirestoreFieldProtocol>(
-    col collection: FirestoreCollection,
-    model: T,
-    updateFields: [U]
+    in collection: FirestoreCollection,
+    with model: T,
+    updating updateFields: [U]
   ) throws {
     guard let id = model.id as? String else {
       throw GSModelError.castIDFailed(from: #function)
@@ -127,11 +127,11 @@ extension LiveFirestoreService {
   }
   
   public func delete(
-    col colledtion: FirestoreCollection,
-    docID documentID: String
+    in collection: FirestoreCollection,
+    at documentID: String
   ) {
     let path: DocumentReference = getDocumentPath(
-      col: colledtion,
+      col: collection,
       docID: documentID
     )
     
@@ -315,7 +315,7 @@ extension LiveFirestoreService {
   ) {
     docPath.updateData(fields)
   }
-
+  
   // MARK: - Delete
   private func deleteDocument(docPath: DocumentReference) {
     docPath.delete()
