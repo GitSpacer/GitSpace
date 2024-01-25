@@ -86,12 +86,14 @@ extension LiveFirestoreService {
   ///   - collection: 조회할 컬렉션입니다.
   ///   - firestoreField: 조건을 검사할 필드입니다.
   ///   - operation: 조건으로 사용되는 연산자 케이스입니다.
+  ///   - operations: 선택적으로 적용할 쿼리 연산자 리스트입니다.
   /// - Returns: 조건을 만족하는 모든 모델을 포함하는 배열을 반환합니다.
   /// - Author: 원태영
   public func fetch<T: GSModel, U: FirestoreFieldProtocol>(
     from collection: FirestoreCollection,
     where firestoreField: U,
-    satisfies operation: FirestoreQueryOperation
+    satisfies operation: FirestoreQueryOperation,
+    option operations: FirestoreQueryOperation?...
   ) async throws -> [T] {
     
     let path: CollectionReference = getCollectionPath(col: collection)
@@ -99,7 +101,8 @@ extension LiveFirestoreService {
     let documents: [QueryDocumentSnapshot] = try await getDocuments(
       colPath: path,
       field: firestoreField,
-      operation: operation
+      required: operation,
+      option: operations.compactMap { $0 }
     )
     
     let modelArray: [T] = try documents.map { document in
@@ -335,25 +338,31 @@ extension LiveFirestoreService {
   
   /// 지정한 경로에서 조건을 만족하는 모든 문서를 조회합니다.
   /// - Parameters:
-  ///   - collectionPath: 조회할 컬렉션의 경로입니다.
+  ///   - colPath collectionPath: 조회할 컬렉션의 경로입니다.
   ///   - field: 조건을 검사할 필드입니다.
-  ///   - operation: 조건으로 적용할 쿼리 연산자입니다.
+  ///   - required operation: 조건으로 적용할 쿼리 연산자입니다.
+  ///   - option operations: 선택적으로 적용할 쿼리 연산자 리스트입니다.
   /// - Returns: 조건을 만족하는 문서들의 배열을 반환합니다.
   /// - Throws: 쿼리 결과가 비어있을 때 오류를 방출합니다.
   /// - Author: 원태영
   private func getDocuments(
     colPath collectionPath: CollectionReference,
     field: any FirestoreFieldProtocol,
-    operation: FirestoreQueryOperation
+    required operation: FirestoreQueryOperation,
+    option operations: [FirestoreQueryOperation]
   ) async throws -> [QueryDocumentSnapshot] {
     
-    let query: Query = makeQuery(
+    var startQuery: Query = makeQuery(
       collectionPath,
       field: field,
       operation: operation
     )
     
-    let snapshot: QuerySnapshot = try await query.getDocuments()
+    operations.forEach {
+      startQuery = startQuery.query(field: field, operation: $0)
+    }
+    
+    let snapshot: QuerySnapshot = try await startQuery.getDocuments()
     
     guard snapshot.isEmpty == false else {
       throw FirestoreError.emptyQuery(from: #function)

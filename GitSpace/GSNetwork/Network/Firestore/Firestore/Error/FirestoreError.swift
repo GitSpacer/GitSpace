@@ -7,6 +7,7 @@ public enum FirestoreError: GSError {
   case noDocument(from: String, document: DocumentSnapshot)
   case emptyCollection(from: String)
   case emptyQuery(from: String)
+  case noRequiredQuery(from: String)
   case unknown(from: String)
 }
 
@@ -27,6 +28,9 @@ public extension FirestoreError {
         
       case .emptyQuery(let from):
         return from + "쿼리에 해당하는 문서를 찾을 수 없습니다."
+        
+      case .noRequiredQuery(let from):
+        return from + "적용할 필수 쿼리를 찾을 수 없습니다."
         
       case .unknown(let from):
         return from + "정의되지 않은 오류입니다."

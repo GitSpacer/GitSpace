@@ -12,6 +12,7 @@ public protocol FirestoreService {
     with model: T
   ) throws
   
+  
   /// 지정된 컬렉션과 문서 ID를 사용하여 모델을 조회합니다.
   /// - Parameters:
   ///   - collection: 조회할 컬렉션입니다.
@@ -23,6 +24,7 @@ public protocol FirestoreService {
     at documentID: String
   ) async throws -> T
   
+  
   /// 지정된 컬렉션의 모든 문서를 조회합니다.
   /// - Parameters:
   ///   - collection: 조회할 컬렉션입니다.
@@ -31,6 +33,7 @@ public protocol FirestoreService {
   func fetch<T: GSModel>(
     from collection: FirestoreCollection
   ) async throws -> [T]
+  
   
   /// 지정된 컬렉션에서 특정 조건을 만족하는 모든 문서를 조회합니다.
   /// - Parameters:
@@ -42,8 +45,10 @@ public protocol FirestoreService {
   func fetch<T: GSModel, U: FirestoreFieldProtocol>(
     from collection: FirestoreCollection,
     where firestoreField: U,
-    satisfies operation: FirestoreQueryOperation
+    satisfies operation: FirestoreQueryOperation,
+    option operations: FirestoreQueryOperation?...
   ) async throws -> [T]
+  
   
   /// 지정된 컬렉션의 모델을 업데이트합니다. model의 ID를 사용해서 문서를 조회합니다.
   /// - Parameters:
@@ -56,6 +61,7 @@ public protocol FirestoreService {
     with model: T,
     updating updateFields: [U]
   ) throws
+  
   
   /// 지정된 컬렉션의 문서를 찾아서 삭제합니다.
   /// - Parameters:
