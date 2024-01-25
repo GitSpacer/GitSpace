@@ -1,6 +1,7 @@
 import FirebaseFirestore
 
 extension Query {
+  
   typealias FirestoreField = any FirestoreFieldProtocol
   
   func query(

@@ -2,6 +2,8 @@ import FirebaseFirestore
 
 public protocol FirestoreService {
   
+  typealias WhereField = (field: any FirestoreFieldProtocol, operation: FirestoreQueryOperation)
+  
   /// 지정된 컬렉션에 모델을 생성합니다.
   /// - Parameters:
   ///   - in collection: 모델을 생성할 컬렉션입니다.
@@ -37,17 +39,13 @@ public protocol FirestoreService {
   
   /// 지정된 컬렉션에서 특정 조건을 만족하는 모든 문서를 조회합니다.
   /// - Parameters:
-  ///   - from collection: 조회할 컬렉션입니다.
-  ///   - where field: 조건을 검사할 필드입니다.
-  ///   - satisfies operation: 조건으로 사용되는 연산자 케이스입니다.
-  ///   - option operations: 선택적으로 적용할 쿼리 연산자 리스트입니다.
+  ///   - from colRef: 조회할 컬렉션입니다.
+  ///   - where query: 검사할 필드와 조건 쿼리가 합쳐진 가변 튜플입니다.
   /// - Returns: 조건을 만족하는 모든 모델을 포함하는 배열을 반환합니다.
   /// - Author: 원태영
-  func fetch<T: GSModel, U: FirestoreFieldProtocol>(
+  func fetch<T: GSModel>(
     from collection: FirestoreCollection,
-    where firestoreField: U,
-    satisfies operation: FirestoreQueryOperation,
-    option operations: FirestoreQueryOperation?...
+    where query: WhereField...
   ) async throws -> [T]
   
   

@@ -1,6 +1,7 @@
 import FirebaseFirestore
 
 public final class LiveFirestoreService: FirestoreService {
+  
   // MARK: - Property
   private let firestore: Firestore
   
@@ -9,6 +10,7 @@ public final class LiveFirestoreService: FirestoreService {
     self.firestore = firestore
   }
 }
+
 
 // MARK: - Interface Method
 extension LiveFirestoreService {
@@ -32,6 +34,7 @@ extension LiveFirestoreService {
     try addDocument(at: docRef, with: model)
   }
   
+  
   /// 지정된 컬렉션과 문서 ID를 사용하여 모델을 조회합니다.
   /// - Parameters:
   ///   - from collection: 조회할 컬렉션입니다.
@@ -52,6 +55,7 @@ extension LiveFirestoreService {
     return model
   }
   
+  
   /// 지정된 컬렉션의 모든 문서를 조회합니다.
   /// - Parameters:
   ///   - from collection: 조회할 컬렉션입니다.
@@ -70,34 +74,27 @@ extension LiveFirestoreService {
     return modelArray
   }
   
+  
   /// 지정된 컬렉션에서 특정 조건을 만족하는 모든 문서를 조회합니다.
   /// - Parameters:
-  ///   - from collection: 조회할 컬렉션입니다.
-  ///   - where field: 조건을 검사할 필드입니다.
-  ///   - satisfies operation: 조건으로 사용되는 연산자 케이스입니다.
-  ///   - option operations: 선택적으로 적용할 쿼리 연산자 리스트입니다.
+  ///   - from colRef: 조회할 컬렉션입니다.
+  ///   - where query: 검사할 필드와 조건 쿼리가 합쳐진 가변 튜플입니다.
   /// - Returns: 조건을 만족하는 모든 모델을 포함하는 배열을 반환합니다.
   /// - Author: 원태영
-  public func fetch<T: GSModel, U: FirestoreFieldProtocol>(
+  public func fetch<T: GSModel>(
     from collection: FirestoreCollection,
-    where field: U,
-    satisfies operation: FirestoreQueryOperation,
-    option operations: FirestoreQueryOperation?...
+    where query: WhereField...
   ) async throws -> [T] {
     
     let colRef: CollectionReference = getCollectionPath(from: collection)
     
-    let documents: [QueryDocumentSnapshot] = try await getDocuments(
-      from: colRef,
-      with: field,
-      required: operation,
-      option: operations.compactMap { $0 }
-    )
+    let documents: [QueryDocumentSnapshot] = try await getDocuments(from: colRef, where: query)
     
     let modelArray: [T] = try documents.map { try $0.data(as: T.self) }
     
     return modelArray
   }
+  
   
   /// 지정된 컬렉션의 모델을 업데이트합니다. 모델의 ID를 사용해서 문서를 조회합니다.
   /// - Parameters:
@@ -121,6 +118,7 @@ extension LiveFirestoreService {
     
     updateDocument(at: docRef, with: updatingFields)
   }
+  
   
   /// 지정된 컬렉션의 문서를 찾아서 삭제합니다.
   /// - Parameters:
@@ -154,6 +152,7 @@ extension LiveFirestoreService {
       .collection(collection.name)
   }
   
+  
   /// 지정한 컬렉션에서 단일 문서 경로를 반환합니다.
   /// - Parameters:
   ///   - from collection: 문서 경로를 검색할 컬렉션입니다.
@@ -169,6 +168,7 @@ extension LiveFirestoreService {
       .collection(collection.name)
       .document(documentID)
   }
+  
   
   /// 지정한 컬렉션의 하위 컬렉션 경로를 반환합니다.
   /// - Parameters:
@@ -188,6 +188,7 @@ extension LiveFirestoreService {
       .document(superDocumentID)
       .collection(subCollection.name)
   }
+  
   
   /// 지정한 컬렉션의 하위 컬렉션에서 단일 문서 경로를 반환합니다.
   /// - Parameters:
@@ -212,6 +213,7 @@ extension LiveFirestoreService {
   }
 }
 
+
 // MARK: - Create
 extension LiveFirestoreService {
   
@@ -230,19 +232,20 @@ extension LiveFirestoreService {
   }
 }
 
+
 // MARK: - Read_Query
 extension LiveFirestoreService {
   
   /// 지정한 컬렉션에 쿼리를 적용한 경로를 반환합니다.
   /// - Parameters:
   ///   - from colRef: 쿼리를 생성할 컬렉션의 경로입니다.
-  ///   - by field: 조건을 검사할 필드입니다.
+  ///   - where field: 조건을 검사할 필드입니다.
   ///   - operation: 조건으로 적용할 쿼리 연산자입니다.
   /// - Returns: 생성된 Query 객체를 반환합니다.
   /// - Author: 원태영
   private func makeQuery(
     from colRef: CollectionReference,
-    by field: any FirestoreFieldProtocol,
+    where field: any FirestoreFieldProtocol,
     operation: FirestoreQueryOperation
   ) -> Query {
     
@@ -277,6 +280,7 @@ extension LiveFirestoreService {
   }
 }
 
+
 // MARK: - Read_Fetch
 extension LiveFirestoreService {
   
@@ -295,6 +299,7 @@ extension LiveFirestoreService {
     return document
   }
   
+  
   /// 지정한 경로의 모든 문서를 조회합니다.
   /// - Parameter from colRef: 조회할 컬렉션의 경로입니다.
   /// - Returns: 조회된 문서들의 배열을 반환합니다.
@@ -311,30 +316,31 @@ extension LiveFirestoreService {
     return snapshot.documents
   }
   
+  
   /// 지정한 경로에서 조건을 만족하는 모든 문서를 조회합니다.
   /// - Parameters:
   ///   - from colRef: 조회할 컬렉션의 경로입니다.
-  ///   - with field: 조건을 검사할 필드입니다.
-  ///   - required operation: 조건으로 적용할 쿼리 연산자입니다.
-  ///   - option operations: 선택적으로 적용할 쿼리 연산자 리스트입니다.
+  ///   - where query: 검사할 필드와 조건 쿼리가 합쳐진 튜플입니다.
   /// - Returns: 조건을 만족하는 문서들의 배열을 반환합니다.
-  /// - Throws: 쿼리 결과가 비어있을 때 오류를 방출합니다.
+  /// - Throws: 쿼리 리스트가 비어있거나, 쿼리 결과가 비어있을 때 오류를 방출합니다.
   /// - Author: 원태영
   private func getDocuments(
     from colRef: CollectionReference,
-    with field: any FirestoreFieldProtocol,
-    required operation: FirestoreQueryOperation,
-    option operations: [FirestoreQueryOperation]
+    where query: [WhereField]
   ) async throws -> [QueryDocumentSnapshot] {
     
-    var startQuery: Query = makeQuery(
-      from: colRef,
-      by: field,
-      operation: operation
-    )
+    var queryList: [WhereField] = query
     
-    operations.forEach {
-      startQuery = startQuery.query(field: field, operation: $0)
+    guard !queryList.isEmpty else {
+      throw FirestoreError.noRequiredQuery(from: #function)
+    }
+    
+    let firstQuery = queryList.removeFirst()
+    
+    var startQuery: Query = makeQuery(from: colRef, where: firstQuery.field, operation: firstQuery.operation)
+    
+    queryList.forEach {
+      startQuery = startQuery.query(field: $0.field, operation: $0.operation)
     }
     
     let snapshot: QuerySnapshot = try await startQuery.getDocuments()
@@ -346,6 +352,7 @@ extension LiveFirestoreService {
     return snapshot.documents
   }
 }
+
 
 // MARK: - Update
 extension LiveFirestoreService {
@@ -372,6 +379,7 @@ extension LiveFirestoreService {
     
     return updatingFields
   }
+  
   
   /// 지정한 경로의 단일 문서의 지정된 필드들을 업데이트합니다.
   /// - Parameters:
