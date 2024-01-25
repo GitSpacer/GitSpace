@@ -9,58 +9,31 @@ extension Query {
   ) -> Query {
     switch operation {
       case .lessThan(let value):
-        return self.whereField(
-          field.name,
-          isLessThan: value
-        )
+        return self.whereField(field.name, isLessThan: value)
         
       case .lessThanOrEqualTo(let value):
-        return self.whereField(
-          field.name,
-          isLessThanOrEqualTo: value
-        )
+        return self.whereField(field.name, isLessThanOrEqualTo: value)
         
       case .equalTo(let value):
-        return self.whereField(
-          field.name,
-          isEqualTo: value
-        )
+        return self.whereField(field.name, isEqualTo: value)
         
       case .greaterThan(let value):
-        return self.whereField(
-          field.name,
-          isGreaterThan: value
-        )
+        return self.whereField(field.name, isGreaterThan: value)
         
       case .greaterThanOrEqualTo(let value):
-        return self.whereField(
-          field.name,
-          isGreaterThanOrEqualTo: value
-        )
+        return self.whereField(field.name, isGreaterThanOrEqualTo: value)
         
       case .arrayContains(let value):
-        return self.whereField(
-          field.name,
-          arrayContains: value
-        )
+        return self.whereField(field.name, arrayContains: value)
         
       case .in(let values):
-        return self.whereField(
-          field.name,
-          in: values
-        )
+        return self.whereField(field.name, in: values)
         
       case .arrayContainsAny(let values):
-        return self.whereField(
-          field.name,
-          arrayContainsAny: values
-        )
+        return self.whereField(field.name, arrayContainsAny: values)
         
       case .orderBy(let type):
-        return self.order(
-          by: field.name,
-          descending: type == .descending ? true : false
-        )
+        return self.order(by: field.name, descending: type == .descending)
     }
   }
 }
