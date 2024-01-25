@@ -12,13 +12,12 @@ public final class LiveFirestoreService: FirestoreService {
 
 // MARK: - Interface Method
 extension LiveFirestoreService {
-  /**
-   지정된 모델을 컬렉션 경로에 새로운 문서로 추가합니다.
-   - Author: 원태영
-   - parameter col: 문서를 추가할 컬렉션입니다.
-   - parameter model: 문서의 내용이 되는 모델입니다.
-   - Returns:
-   */
+  
+  /// 지정된 컬렉션에 모델을 생성합니다.
+  /// - Parameters:
+  ///   - collection: 모델을 생성할 컬렉션입니다.
+  ///   - model: 저장할 모델의 인스턴스입니다.
+  /// - Author: 원태영
   public func create<T: GSModel>(
     in collection: FirestoreCollection,
     with model: T

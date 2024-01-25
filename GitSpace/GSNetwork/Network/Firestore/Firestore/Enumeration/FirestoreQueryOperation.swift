@@ -28,6 +28,7 @@ public enum FirestoreQueryOperation {
   /// 배열 필드에 지정된 값들 중 하나 이상을 포함하는 문서를 반환합니다.
   case arrayContainsAny(values: [Any])
 
-  /// 지정된 필드를 기준으로 문서를 정렬합니다. `SortType`은 오름차순 또는 내림차순 정렬을 지정합니다.
+  /// 지정된 필드를 기준으로 문서를 정렬합니다.
+  /// `SortType`은 오름차순 또는 내림차순 정렬을 지정합니다.
   case orderBy(type: SortType)
 }
