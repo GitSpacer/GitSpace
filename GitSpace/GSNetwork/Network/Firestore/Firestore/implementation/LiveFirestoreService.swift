@@ -22,6 +22,7 @@ extension LiveFirestoreService {
     in collection: FirestoreCollection,
     with model: T
   ) throws {
+    
     guard let id = model.id as? String else {
       throw GSModelError.castIDFailed(from: #function)
     }
@@ -37,38 +38,38 @@ extension LiveFirestoreService {
     )
   }
   
-  /**
-   지정된 컬렉션 경로와 문서 ID를 사용하여 모델을 조회합니다.
-   - Author: 원태영
-   - parameter col: 조회할 컬렉션입니다.
-   - parameter docID: 조회할 문서의 ID입니다.
-   - Returns: 지정된 타입의 모델을 반환합니다.
-   */
+  /// 지정된 컬렉션과 문서 ID를 사용하여 모델을 조회합니다.
+  /// - Parameters:
+  ///   - collection: 조회할 컬렉션입니다.
+  ///   - documentID: 조회할 문서의 ID입니다.
+  /// - Returns: 지정된 타입의 모델을 반환합니다.
+  /// - Author: 원태영
   public func fetch<T: GSModel>(
     from collection: FirestoreCollection,
     at documentID: String
   ) async throws -> T {
+    
     let path: DocumentReference = getDocumentPath(
       col: collection,
       docID: documentID
     )
     
     let document: DocumentSnapshot = try await getDocument(docPath: path)
-    
+
     let model: T = try document.data(as: T.self)
     
     return model
   }
   
-  /**
-   지정된 컬렉션에 있는 모든 문서를 조회하여 모델의 배열로 반환합니다.
-   - Author: 원태영
-   - parameter col: 조회할 컬렉션입니다.
-   - Returns: 지정된 타입의 모델 배열을 반환합니다.
-   */
+  /// 지정된 컬렉션의 모든 문서를 조회합니다.
+  /// - Parameters:
+  ///   - collection: 조회할 컬렉션입니다.
+  /// - Returns: 해당 컬렉션의 모든 모델을 포함하는 배열을 반환합니다.
+  /// - Author: 원태영
   public func fetch<T: GSModel>(
     from collection: FirestoreCollection
   ) async throws -> [T] {
+    
     let path: CollectionReference = getCollectionPath(col: collection)
     
     let documents: [QueryDocumentSnapshot] = try await getDocuments(colPath: path)
@@ -80,11 +81,19 @@ extension LiveFirestoreService {
     return modelArray
   }
   
+  /// 지정된 컬렉션에서 특정 조건을 만족하는 모든 문서를 조회합니다.
+  /// - Parameters:
+  ///   - collection: 조회할 컬렉션입니다.
+  ///   - firestoreField: 조건을 검사할 필드입니다.
+  ///   - operation: 조건으로 사용되는 연산자 케이스입니다.
+  /// - Returns: 조건을 만족하는 모든 모델을 포함하는 배열을 반환합니다.
+  /// - Author: 원태영
   public func fetch<T: GSModel, U: FirestoreFieldProtocol>(
     from collection: FirestoreCollection,
     where firestoreField: U,
     satisfies operation: FirestoreQueryOperation
   ) async throws -> [T] {
+    
     let path: CollectionReference = getCollectionPath(col: collection)
     
     let documents: [QueryDocumentSnapshot] = try await getDocuments(
@@ -100,11 +109,18 @@ extension LiveFirestoreService {
     return modelArray
   }
   
+  /// 지정된 컬렉션의 모델을 업데이트합니다. model의 ID를 사용해서 문서를 조회합니다.
+  /// - Parameters:
+  ///   - collection: 업데이트할 컬렉션입니다.
+  ///   - model: 업데이트할 모델의 인스턴스입니다.
+  ///   - updateFields: 업데이트할 필드의 배열입니다.
+  /// - Author: 원태영
   public func update<T: GSModel, U: FirestoreFieldProtocol>(
     in collection: FirestoreCollection,
     with model: T,
     updating updateFields: [U]
   ) throws {
+    
     guard let id = model.id as? String else {
       throw GSModelError.castIDFailed(from: #function)
     }
@@ -125,10 +141,16 @@ extension LiveFirestoreService {
     )
   }
   
+  /// 지정된 컬렉션의 문서를 찾아서 삭제합니다.
+  /// - Parameters:
+  ///   - collection: 삭제할 컬렉션입니다.
+  ///   - documentID: 삭제할 문서의 ID입니다.
+  /// - Author: 원태영
   public func delete(
     in collection: FirestoreCollection,
     at documentID: String
   ) {
+    
     let path: DocumentReference = getDocumentPath(
       col: collection,
       docID: documentID
@@ -141,8 +163,10 @@ extension LiveFirestoreService {
 
 // MARK: - Private
 extension LiveFirestoreService {
+  
   // MARK: - Path
   private func getCollectionPath(col collection: FirestoreCollection) -> CollectionReference {
+    
     return firestore
       .collection(collection.name)
   }
@@ -151,6 +175,7 @@ extension LiveFirestoreService {
     col collection: FirestoreCollection,
     docID documentID: String
   ) -> DocumentReference {
+    
     return firestore
       .collection(collection.name)
       .document(documentID)
@@ -161,6 +186,7 @@ extension LiveFirestoreService {
     supDocID superDocumentID: String,
     subCol subCollection: FirestoreCollection
   ) -> CollectionReference {
+    
     return firestore
       .collection(superCollection.name)
       .document(superDocumentID)
@@ -173,6 +199,7 @@ extension LiveFirestoreService {
     subCol subCollection: FirestoreCollection,
     subDocID subDocumentID: String
   ) -> DocumentReference {
+    
     return firestore
       .collection(superCollection.name)
       .document(superDocumentID)
@@ -185,6 +212,7 @@ extension LiveFirestoreService {
     docPath documentPath: DocumentReference,
     model: T
   ) throws {
+    
     try documentPath.setData(from: model)
   }
   
@@ -194,6 +222,7 @@ extension LiveFirestoreService {
     field: any FirestoreFieldProtocol,
     operation: FirestoreQueryOperation
   ) -> Query {
+    
     switch operation {
       case .lessThan(let value):
         return collectionPath.whereField(
@@ -262,6 +291,7 @@ extension LiveFirestoreService {
   }
   
   private func getDocuments(colPath collectionPath: CollectionReference) async throws -> [QueryDocumentSnapshot] {
+    
     let snapshot: QuerySnapshot = try await collectionPath.getDocuments()
     
     guard snapshot.isEmpty == false else {
@@ -276,6 +306,7 @@ extension LiveFirestoreService {
     field: any FirestoreFieldProtocol,
     operation: FirestoreQueryOperation
   ) async throws -> [QueryDocumentSnapshot] {
+    
     let query: Query = makeQuery(
       collectionPath,
       field: field,
@@ -296,6 +327,7 @@ extension LiveFirestoreService {
     updateFields: [any FirestoreFieldProtocol],
     model: T
   ) -> [String: Any] {
+    
     let fieldDictionary = model.asDictionary
     var fields: [String: Any] = [:]
     
@@ -312,11 +344,13 @@ extension LiveFirestoreService {
     docPath: DocumentReference,
     fields: [String: Any]
   ) {
+    
     docPath.updateData(fields)
   }
   
   // MARK: - Delete
   private func deleteDocument(docPath: DocumentReference) {
+    
     docPath.delete()
   }
 }
