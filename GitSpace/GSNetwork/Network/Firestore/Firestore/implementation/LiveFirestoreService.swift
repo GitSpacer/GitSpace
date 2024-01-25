@@ -15,33 +15,27 @@ extension LiveFirestoreService {
   
   /// 지정된 컬렉션에 모델을 생성합니다.
   /// - Parameters:
-  ///   - collection: 모델을 생성할 컬렉션입니다.
-  ///   - model: 저장할 모델의 인스턴스입니다.
+  ///   - in collection: 모델을 생성할 컬렉션입니다.
+  ///   - with model: 저장할 모델의 인스턴스입니다.
   /// - Author: 원태영
   public func create<T: GSModel>(
     in collection: FirestoreCollection,
     with model: T
   ) throws {
     
-    guard let id = model.id as? String else {
+    guard let docID = model.id as? String else {
       throw GSModelError.castIDFailed(from: #function)
     }
     
-    let docPath: DocumentReference = getDocumentPath(
-      col: collection,
-      docID: id
-    )
+    let docRef: DocumentReference = getDocumentPath(from: collection, at: docID)
     
-    try addDocument(
-      docPath: docPath,
-      model: model
-    )
+    try addDocument(at: docRef, with: model)
   }
   
   /// 지정된 컬렉션과 문서 ID를 사용하여 모델을 조회합니다.
   /// - Parameters:
-  ///   - collection: 조회할 컬렉션입니다.
-  ///   - documentID: 조회할 문서의 ID입니다.
+  ///   - from collection: 조회할 컬렉션입니다.
+  ///   - at documentID: 조회할 문서의 ID입니다.
   /// - Returns: 지정된 타입의 모델을 반환합니다.
   /// - Author: 원태영
   public func fetch<T: GSModel>(
@@ -49,12 +43,9 @@ extension LiveFirestoreService {
     at documentID: String
   ) async throws -> T {
     
-    let path: DocumentReference = getDocumentPath(
-      col: collection,
-      docID: documentID
-    )
+    let docRef: DocumentReference = getDocumentPath(from: collection, at: documentID)
     
-    let document: DocumentSnapshot = try await getDocument(docPath: path)
+    let document: DocumentSnapshot = try await getDocument(at: docRef)
     
     let model: T = try document.data(as: T.self)
     
@@ -63,103 +54,87 @@ extension LiveFirestoreService {
   
   /// 지정된 컬렉션의 모든 문서를 조회합니다.
   /// - Parameters:
-  ///   - collection: 조회할 컬렉션입니다.
+  ///   - from collection: 조회할 컬렉션입니다.
   /// - Returns: 해당 컬렉션의 모든 모델을 포함하는 배열을 반환합니다.
   /// - Author: 원태영
   public func fetch<T: GSModel>(
     from collection: FirestoreCollection
   ) async throws -> [T] {
     
-    let path: CollectionReference = getCollectionPath(col: collection)
+    let colRef: CollectionReference = getCollectionPath(from: collection)
     
-    let documents: [QueryDocumentSnapshot] = try await getDocuments(colPath: path)
+    let documents: [QueryDocumentSnapshot] = try await getDocuments(from: colRef)
     
-    let modelArray: [T] = try documents.map { document in
-      try document.data(as: T.self)
-    }
+    let modelArray: [T] = try documents.map { try $0.data(as: T.self) }
     
     return modelArray
   }
   
   /// 지정된 컬렉션에서 특정 조건을 만족하는 모든 문서를 조회합니다.
   /// - Parameters:
-  ///   - collection: 조회할 컬렉션입니다.
-  ///   - firestoreField: 조건을 검사할 필드입니다.
-  ///   - operation: 조건으로 사용되는 연산자 케이스입니다.
-  ///   - operations: 선택적으로 적용할 쿼리 연산자 리스트입니다.
+  ///   - from collection: 조회할 컬렉션입니다.
+  ///   - where field: 조건을 검사할 필드입니다.
+  ///   - satisfies operation: 조건으로 사용되는 연산자 케이스입니다.
+  ///   - option operations: 선택적으로 적용할 쿼리 연산자 리스트입니다.
   /// - Returns: 조건을 만족하는 모든 모델을 포함하는 배열을 반환합니다.
   /// - Author: 원태영
   public func fetch<T: GSModel, U: FirestoreFieldProtocol>(
     from collection: FirestoreCollection,
-    where firestoreField: U,
+    where field: U,
     satisfies operation: FirestoreQueryOperation,
     option operations: FirestoreQueryOperation?...
   ) async throws -> [T] {
     
-    let path: CollectionReference = getCollectionPath(col: collection)
+    let colRef: CollectionReference = getCollectionPath(from: collection)
     
     let documents: [QueryDocumentSnapshot] = try await getDocuments(
-      colPath: path,
-      field: firestoreField,
+      from: colRef,
+      with: field,
       required: operation,
       option: operations.compactMap { $0 }
     )
     
-    let modelArray: [T] = try documents.map { document in
-      try document.data(as: T.self)
-    }
+    let modelArray: [T] = try documents.map { try $0.data(as: T.self) }
     
     return modelArray
   }
   
-  /// 지정된 컬렉션의 모델을 업데이트합니다. model의 ID를 사용해서 문서를 조회합니다.
+  /// 지정된 컬렉션의 모델을 업데이트합니다. 모델의 ID를 사용해서 문서를 조회합니다.
   /// - Parameters:
-  ///   - collection: 업데이트할 컬렉션입니다.
-  ///   - model: 업데이트할 모델의 인스턴스입니다.
-  ///   - updateFields: 업데이트할 필드의 배열입니다.
+  ///   - in collection: 업데이트 모델이 위치한 컬렉션입니다.
+  ///   - at model: 업데이트할 모델입니다.
+  ///   - updating fields: 업데이트할 필드 리스트입니다.
   /// - Author: 원태영
   public func update<T: GSModel, U: FirestoreFieldProtocol>(
     in collection: FirestoreCollection,
-    with model: T,
-    updating updateFields: [U]
+    at model: T,
+    updating fields: [U]
   ) throws {
     
-    guard let id = model.id as? String else {
+    guard let docID = model.id as? String else {
       throw GSModelError.castIDFailed(from: #function)
     }
     
-    let path: DocumentReference = getDocumentPath(
-      col: collection,
-      docID: id
-    )
+    let docRef: DocumentReference = getDocumentPath(from: collection, at: docID)
     
-    let fields: [String: Any] = makeFields(
-      updateFields: updateFields,
-      model: model
-    )
+    let updatingFields: [String: Any] = makeFields(with: fields, to: model)
     
-    updateDocument(
-      docPath: path,
-      fields: fields
-    )
+    updateDocument(at: docRef, with: updatingFields)
   }
   
   /// 지정된 컬렉션의 문서를 찾아서 삭제합니다.
   /// - Parameters:
-  ///   - collection: 삭제할 컬렉션입니다.
-  ///   - documentID: 삭제할 문서의 ID입니다.
+  ///   - in collection: 삭제할 컬렉션입니다.
+  ///   - at documentID: 삭제할 문서의 ID입니다.
   /// - Author: 원태영
   public func delete(
     in collection: FirestoreCollection,
     at documentID: String
   ) {
     
-    let path: DocumentReference = getDocumentPath(
-      col: collection,
-      docID: documentID
-    )
+    let docRef: DocumentReference = getDocumentPath(from: collection, at: documentID)
     
-    deleteDocument(docPath: path)
+    deleteDocument(at: docRef)
   }
 }
 
@@ -170,10 +145,10 @@ extension LiveFirestoreService {
 extension LiveFirestoreService {
   
   /// 지정한 컬렉션의 경로를 반환합니다.
-  /// - Parameter collection: 경로를 검색할 Firestore 컬렉션입니다.
+  /// - Parameter from collection: 경로를 검색할 Firestore 컬렉션입니다.
   /// - Returns: 지정된 컬렉션에 대한 CollectionReference를 반환합니다.
   /// - Author: 원태영
-  private func getCollectionPath(col collection: FirestoreCollection) -> CollectionReference {
+  private func getCollectionPath(from collection: FirestoreCollection) -> CollectionReference {
     
     return firestore
       .collection(collection.name)
@@ -181,13 +156,13 @@ extension LiveFirestoreService {
   
   /// 지정한 컬렉션에서 단일 문서 경로를 반환합니다.
   /// - Parameters:
-  ///   - collection: 문서 경로를 검색할 컬렉션입니다.
-  ///   - documentID: 검색할 문서의 ID입니다.
+  ///   - from collection: 문서 경로를 검색할 컬렉션입니다.
+  ///   - at documentID: 검색할 문서의 ID입니다.
   /// - Returns: 지정된 문서에 대한 DocumentReference를 반환합니다.
   /// - Author: 원태영
   private func getDocumentPath(
-    col collection: FirestoreCollection,
-    docID documentID: String
+    from collection: FirestoreCollection,
+    at documentID: String
   ) -> DocumentReference {
     
     return firestore
@@ -197,15 +172,15 @@ extension LiveFirestoreService {
   
   /// 지정한 컬렉션의 하위 컬렉션 경로를 반환합니다.
   /// - Parameters:
-  ///   - superCollection: 상위 컬렉션입니다.
-  ///   - superDocumentID: 상위 문서의 ID입니다.
-  ///   - subCollection: 하위 컬렉션입니다.
+  ///   - superCol superCollection: 상위 컬렉션입니다.
+  ///   - superDoc superDocumentID: 상위 문서의 ID입니다.
+  ///   - from subCollection: 하위 컬렉션입니다.
   /// - Returns: 하위 컬렉션에 대한 CollectionReference를 반환합니다.
   /// - Author: 원태영
   private func getCollectionPath(
-    supCol superCollection: FirestoreCollection,
-    supDocID superDocumentID: String,
-    subCol subCollection: FirestoreCollection
+    superCol superCollection: FirestoreCollection,
+    superDoc superDocumentID: String,
+    from subCollection: FirestoreCollection
   ) -> CollectionReference {
     
     return firestore
@@ -216,17 +191,17 @@ extension LiveFirestoreService {
   
   /// 지정한 컬렉션의 하위 컬렉션에서 단일 문서 경로를 반환합니다.
   /// - Parameters:
-  ///   - superCollection: 상위 컬렉션입니다.
-  ///   - superDocumentID: 상위 문서의 ID입니다.
-  ///   - subCollection: 하위 컬렉션입니다.
-  ///   - subDocumentID: 하위 문서의 ID입니다.
+  ///   - superCol superCollection: 상위 컬렉션입니다.
+  ///   - superDoc superDocumentID: 상위 문서의 ID입니다.
+  ///   - from subCollection: 하위 컬렉션입니다.
+  ///   - at subDocumentID: 하위 문서의 ID입니다.
   /// - Returns: 하위 문서에 대한 DocumentReference를 반환합니다.
   /// - Author: 원태영
   private func getDocumentPath(
-    supCol superCollection: FirestoreCollection,
-    supDocID superDocumentID: String,
-    subCol subCollection: FirestoreCollection,
-    subDocID subDocumentID: String
+    superCol superCollection: FirestoreCollection,
+    superDoc superDocumentID: String,
+    from subCollection: FirestoreCollection,
+    at subDocumentID: String
   ) -> DocumentReference {
     
     return firestore
@@ -242,16 +217,16 @@ extension LiveFirestoreService {
   
   /// 지정한 경로에 새로운 단일 문서를 생성합니다.
   /// - Parameters:
-  ///   - documentPath: 생성할 문서의 경로입니다.
-  ///   - model: Firestore에 저장할 모델입니다.
+  ///   - at docRef: 생성할 문서의 경로입니다.
+  ///   - with model: 문서로 생성할 모델입니다.
   /// - Throws: 문서 생성 중 발생하는 오류를 방출합니다.
   /// - Author: 원태영
   private func addDocument<T: GSModel>(
-    docPath documentPath: DocumentReference,
-    model: T
+    at docRef: DocumentReference,
+    with model: T
   ) throws {
     
-    try documentPath.setData(from: model)
+    try docRef.setData(from: model)
   }
 }
 
@@ -260,44 +235,44 @@ extension LiveFirestoreService {
   
   /// 지정한 컬렉션에 쿼리를 적용한 경로를 반환합니다.
   /// - Parameters:
-  ///   - collectionPath: 쿼리를 생성할 컬렉션의 경로입니다.
-  ///   - field: 조건을 검사할 필드입니다.
+  ///   - from colRef: 쿼리를 생성할 컬렉션의 경로입니다.
+  ///   - by field: 조건을 검사할 필드입니다.
   ///   - operation: 조건으로 적용할 쿼리 연산자입니다.
   /// - Returns: 생성된 Query 객체를 반환합니다.
   /// - Author: 원태영
   private func makeQuery(
-    _ collectionPath: CollectionReference,
-    field: any FirestoreFieldProtocol,
+    from colRef: CollectionReference,
+    by field: any FirestoreFieldProtocol,
     operation: FirestoreQueryOperation
   ) -> Query {
     
     switch operation {
       case .lessThan(let value):
-        return collectionPath.whereField(field.name, isLessThan: value)
+        return colRef.whereField(field.name, isLessThan: value)
         
       case .lessThanOrEqualTo(let value):
-        return collectionPath.whereField(field.name, isLessThanOrEqualTo: value)
+        return colRef.whereField(field.name, isLessThanOrEqualTo: value)
         
       case .equalTo(let value):
-        return collectionPath.whereField(field.name, isEqualTo: value)
+        return colRef.whereField(field.name, isEqualTo: value)
         
       case .greaterThan(let value):
-        return collectionPath.whereField(field.name, isGreaterThan: value)
+        return colRef.whereField(field.name, isGreaterThan: value)
         
       case .greaterThanOrEqualTo(let value):
-        return collectionPath.whereField(field.name, isGreaterThanOrEqualTo: value)
+        return colRef.whereField(field.name, isGreaterThanOrEqualTo: value)
         
       case .arrayContains(let value):
-        return collectionPath.whereField(field.name, arrayContains: value)
+        return colRef.whereField(field.name, arrayContains: value)
         
       case .in(let values):
-        return collectionPath.whereField(field.name, in: values)
+        return colRef.whereField(field.name, in: values)
         
       case .arrayContainsAny(let values):
-        return collectionPath.whereField(field.name, arrayContainsAny: values)
+        return colRef.whereField(field.name, arrayContainsAny: values)
         
       case .orderBy(let type):
-        return collectionPath.order(by: field.name, descending: type == .descending)
+        return colRef.order(by: field.name, descending: type == .descending)
     }
   }
 }
@@ -306,12 +281,12 @@ extension LiveFirestoreService {
 extension LiveFirestoreService {
   
   /// 지정한 경로의 단일 문서를 조회합니다.
-  /// - Parameter documentPath: 조회할 문서의 경로입니다.
+  /// - Parameter at docRef: 조회할 문서의 경로입니다.
   /// - Returns: 조회된 DocumentSnapshot을 반환합니다.
   /// - Throws: 문서가 존재하지 않을 때 오류를 방출합니다.
   /// - Author: 원태영
-  private func getDocument(docPath documentPath: DocumentReference) async throws -> DocumentSnapshot {
-    let document: DocumentSnapshot = try await documentPath.getDocument()
+  private func getDocument(at docRef: DocumentReference) async throws -> DocumentSnapshot {
+    let document: DocumentSnapshot = try await docRef.getDocument()
     
     guard document.exists else {
       throw FirestoreError.noDocument(from: #function, document: document)
@@ -321,13 +296,13 @@ extension LiveFirestoreService {
   }
   
   /// 지정한 경로의 모든 문서를 조회합니다.
-  /// - Parameter collectionPath: 조회할 컬렉션의 경로입니다.
+  /// - Parameter from colRef: 조회할 컬렉션의 경로입니다.
   /// - Returns: 조회된 문서들의 배열을 반환합니다.
   /// - Throws: 컬렉션이 비어있을 때 오류를 방출합니다.
   /// - Author: 원태영
-  private func getDocuments(colPath collectionPath: CollectionReference) async throws -> [QueryDocumentSnapshot] {
+  private func getDocuments(from colRef: CollectionReference) async throws -> [QueryDocumentSnapshot] {
     
-    let snapshot: QuerySnapshot = try await collectionPath.getDocuments()
+    let snapshot: QuerySnapshot = try await colRef.getDocuments()
     
     guard snapshot.isEmpty == false else {
       throw FirestoreError.emptyCollection(from: #function)
@@ -338,23 +313,23 @@ extension LiveFirestoreService {
   
   /// 지정한 경로에서 조건을 만족하는 모든 문서를 조회합니다.
   /// - Parameters:
-  ///   - colPath collectionPath: 조회할 컬렉션의 경로입니다.
-  ///   - field: 조건을 검사할 필드입니다.
+  ///   - from colRef: 조회할 컬렉션의 경로입니다.
+  ///   - with field: 조건을 검사할 필드입니다.
   ///   - required operation: 조건으로 적용할 쿼리 연산자입니다.
   ///   - option operations: 선택적으로 적용할 쿼리 연산자 리스트입니다.
   /// - Returns: 조건을 만족하는 문서들의 배열을 반환합니다.
   /// - Throws: 쿼리 결과가 비어있을 때 오류를 방출합니다.
   /// - Author: 원태영
   private func getDocuments(
-    colPath collectionPath: CollectionReference,
-    field: any FirestoreFieldProtocol,
+    from colRef: CollectionReference,
+    with field: any FirestoreFieldProtocol,
     required operation: FirestoreQueryOperation,
     option operations: [FirestoreQueryOperation]
   ) async throws -> [QueryDocumentSnapshot] {
     
     var startQuery: Query = makeQuery(
-      collectionPath,
-      field: field,
+      from: colRef,
+      by: field,
       operation: operation
     )
     
@@ -377,38 +352,38 @@ extension LiveFirestoreService {
   
   /// 모델에서 업데이트 할 필드 딕셔너리를 추출해서 반환합니다.
   /// - Parameters:
-  ///   - updateFields: 업데이트할 필드들입니다.
-  ///   - model: 업데이트할 모델입니다.
+  ///   - with fields: 업데이트할 필드들입니다.
+  ///   - to model: 업데이트할 모델입니다.
   /// - Returns: 업데이트할 필드들의 딕셔너리를 반환합니다.
   /// - Author: 원태영
   private func makeFields<T: GSModel>(
-    updateFields: [any FirestoreFieldProtocol],
-    model: T
+    with fields: [any FirestoreFieldProtocol],
+    to model: T
   ) -> [String: Any] {
     
     let fieldDictionary = model.asDictionary
-    var fields: [String: Any] = [:]
+    var updatingFields: [String: Any] = [:]
     
-    updateFields.forEach { field in
+    fields.forEach { field in
       guard let value = fieldDictionary[field.name] else { return }
       
-      fields.updateValue(value, forKey: field.name)
+      updatingFields.updateValue(value, forKey: field.name)
     }
     
-    return fields
+    return updatingFields
   }
   
   /// 지정한 경로의 단일 문서의 지정된 필드들을 업데이트합니다.
   /// - Parameters:
-  ///   - docPath: 업데이트할 문서의 경로입니다.
-  ///   - fields: 업데이트할 필드들입니다.
+  ///   - at docRef: 업데이트할 문서의 경로입니다.
+  ///   - with fields: 업데이트할 필드 딕셔너리입니다.
   /// - Author: 원태영
   private func updateDocument(
-    docPath: DocumentReference,
-    fields: [String: Any]
+    at docRef: DocumentReference,
+    with fields: [String: Any]
   ) {
     
-    docPath.updateData(fields)
+    docRef.updateData(fields)
   }
 }
 
@@ -417,11 +392,11 @@ extension LiveFirestoreService {
 extension LiveFirestoreService {
   
   /// 지정한 경로의 단일 문서를 삭제합니다.
-  /// - Parameter docPath: 삭제할 문서의 경로입니다.
+  /// - Parameter at docRef: 삭제할 문서의 경로입니다.
   /// - Author: 원태영
-  private func deleteDocument(docPath: DocumentReference) {
+  private func deleteDocument(at docRef: DocumentReference) {
     
-    docPath.delete()
+    docRef.delete()
   }
 }
 
