@@ -14,4 +14,26 @@ public enum FirestoreCollection: String, FirestoreSchema {
     
     return firstChar.uppercased() + temp
   }
+  
+  public var collectionFieldType: any FirestoreFieldProtocol.Type {
+    switch self {
+      case .chat:
+        return FirestoreField.Chat.self
+        
+      case .knock:
+        return FirestoreField.Knock.self
+        
+      case .message:
+        return FirestoreField.Message.self
+        
+      case .report:
+        return FirestoreField.Report.self
+        
+      case .userInfo:
+        return FirestoreField.UserInfo.self
+        
+      case .tag:
+        return FirestoreField.Tag.self
+    }
+  }
 }
