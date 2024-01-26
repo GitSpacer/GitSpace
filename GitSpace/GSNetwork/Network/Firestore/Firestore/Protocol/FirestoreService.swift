@@ -40,12 +40,12 @@ public protocol FirestoreService {
   /// 지정된 컬렉션에서 특정 조건을 만족하는 모든 문서를 조회합니다.
   /// - Parameters:
   ///   - from colRef: 조회할 컬렉션입니다.
-  ///   - where query: 검사할 필드와 조건 쿼리가 합쳐진 가변 튜플입니다.
+  ///   - where query: 검사할 필드와 조건 오퍼레이션이 포함된 튜플 배열입니다.
   /// - Returns: 조건을 만족하는 모든 모델을 포함하는 배열을 반환합니다.
   /// - Author: 원태영
   func fetch<T: GSModel>(
     from collection: FirestoreCollection,
-    where query: WhereField...
+    where query: [WhereField]
   ) async throws -> [T]
   
   
