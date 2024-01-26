@@ -2,14 +2,14 @@ import Foundation
 import FirebaseFirestore
 
 public struct Report: GSModel {
+  
   public var id: String = UUID().uuidString
-  var reason: String
-  var reporterID: String
-  var targetUserID: String
-  var date: Timestamp
-  // Knock 메시지, Chat 메시지 등등
-  var content: String?
-  var type: String
+  public var reason: String
+  public var reporterID: String
+  public var targetUserID: String
+  public var date: Timestamp
+  public var content: String? // Knock 메시지, Chat 메시지 등등
+  public var type: String
   
   enum ReportType: String, Codable {
     case user = "User"

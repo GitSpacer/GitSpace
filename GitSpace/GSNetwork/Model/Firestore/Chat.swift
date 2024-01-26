@@ -1,14 +1,15 @@
 import Foundation
 
 public struct Chat: GSModel {
-  public let id: String                   // 채팅방 ID
-  let createdDate: Date                   // 생성 날짜
-  let joinedMemberIDs: [String]           // 채팅방에 참여한 유저 ID 리스트
-  var lastContent: String                 // 마지막 메세지 내용
-  var lastContentDate: Date               // 마지막 메세지 날짜
-  let knockContent: String                // 노크 메세지 내용
-  let knockContentDate: Date              // 노크 메세지 날짜
-  var unreadMessageCount: [String: Int]  // 읽지 않은 메시지 갯수 (userID : 읽지 않은 메시지 갯수)
+  
+  public var id: String                          // 채팅방 ID
+  public var createdDate: Date                   // 생성 날짜
+  public var joinedMemberIDs: [String]           // 채팅방에 참여한 유저 ID 리스트
+  public var lastContent: String                 // 마지막 메세지 내용
+  public var lastContentDate: Date               // 마지막 메세지 날짜
+  public var knockContent: String                // 노크 메세지 내용
+  public var knockContentDate: Date              // 노크 메세지 날짜
+  public var unreadMessageCount: [String: Int]   // 읽지 않은 메시지 갯수 (userID : 읽지 않은 메시지 갯수)
   
   public init(
     id: String,
