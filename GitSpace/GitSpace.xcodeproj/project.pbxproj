@@ -16,6 +16,8 @@
 		6E7E3BF52AD35A7700152EAE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7E3BF42AD35A7700152EAE /* FirebaseFirestore */; };
 		6E7E3BF72AD35A7700152EAE /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7E3BF62AD35A7700152EAE /* FirebaseFirestoreSwift */; };
 		6E7E3BF92AD35A7700152EAE /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7E3BF82AD35A7700152EAE /* FirebaseMessaging */; };
+		6E9AEBD92B62866700E10516 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E9AEBD82B62866700E10516 /* GoogleService-Info.plist */; };
+		6E9AEBDA2B62866700E10516 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E9AEBD82B62866700E10516 /* GoogleService-Info.plist */; };
 		6EF1F4992B57CF0100CD247D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF1F4982B57CF0100CD247D /* FirebaseFirestore */; };
 		6EF1F49B2B57CF0100CD247D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF1F49A2B57CF0100CD247D /* FirebaseFirestoreSwift */; };
 		6EF1F4CA2B57F12C00CD247D /* GSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4C92B57F12C00CD247D /* GSError.swift */; };
@@ -135,6 +137,7 @@
 		6E61F9322AD81A48001C7FF3 /* GSCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSCanvas.swift; sourceTree = "<group>"; };
 		6E61F9342AD81CC6001C7FF3 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		6E652F442AD821B1008F8151 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		6E9AEBD82B62866700E10516 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EF1F4872B57CE4500CD247D /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		6EF1F4882B57CE4500CD247D /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		6EF1F4892B57CE4500CD247D /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -419,6 +422,7 @@
 		7E65A94D2ACEEA3200C9BEA3 /* GitSpace */ = {
 			isa = PBXGroup;
 			children = (
+				6E9AEBD82B62866700E10516 /* GoogleService-Info.plist */,
 				7E65A94E2ACEEA3200C9BEA3 /* GitSpaceApp.swift */,
 				7E65A9502ACEEA3200C9BEA3 /* ContentView.swift */,
 				7E65A9522ACEEA3300C9BEA3 /* Assets.xcassets */,
@@ -648,6 +652,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E9AEBDA2B62866700E10516 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,6 +661,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				681C742D2AE1611200651D3E /* .swiftlint.yml in Resources */,
+				6E9AEBD92B62866700E10516 /* GoogleService-Info.plist in Resources */,
 				7E65A9562ACEEA3300C9BEA3 /* Preview Assets.xcassets in Resources */,
 				7E65A9532ACEEA3300C9BEA3 /* Assets.xcassets in Resources */,
 			);
@@ -996,7 +1002,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GitSpace/Preview Content\"";
-				DEVELOPMENT_TEAM = 67M6ZS7KS6;
+				DEVELOPMENT_TEAM = 75QZ7682T2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1009,7 +1015,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Celan.GitSpace;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GitSpacer.GitSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1026,7 +1032,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GitSpace/Preview Content\"";
-				DEVELOPMENT_TEAM = 67M6ZS7KS6;
+				DEVELOPMENT_TEAM = 75QZ7682T2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1039,7 +1045,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Celan.GitSpace;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GitSpacer.GitSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
