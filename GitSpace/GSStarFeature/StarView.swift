@@ -9,8 +9,7 @@ import SwiftUI
 import GSDesignSystem
 
 struct StarView: View {
-    @State private var starredTapStatus: GSTab = .starred
-    @State private var activityTapStatus: GSTab = .activity
+    @State var selectedTab: GSTab = .starred
     
     var body: some View {
         NavigationStack {
@@ -25,10 +24,9 @@ struct StarView: View {
                     GSButton(
                         style: .tab(
                             tabName: .starred,
-                            selectedTab: $starredTapStatus)
+                            selectedTab: $selectedTab)
                     ) {
-                        starredTapStatus = .starred
-                        activityTapStatus = .activity
+                        selectedTab = .starred
                     } label: {
                         Text("Starred")
                     }
@@ -39,11 +37,10 @@ struct StarView: View {
                     
                     GSButton(
                         style: .tab(
-                            tabName: .starred,
-                            selectedTab: $activityTapStatus)
+                            tabName: .activity,
+                            selectedTab: $selectedTab)
                     ) {
-                        starredTapStatus = .activity
-                        activityTapStatus = .starred
+                        selectedTab = .activity
                     } label: {
                         Text("Activity")
                     }
@@ -58,7 +55,7 @@ struct StarView: View {
             .padding(.horizontal)
             
             /** starred, activity tab */
-            switch starredTapStatus {
+            switch selectedTab {
             case .starred:
                 StarRepositoryView()
             case .activity:
