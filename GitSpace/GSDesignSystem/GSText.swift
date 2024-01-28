@@ -20,7 +20,7 @@ public struct GSText: View {
         case description
     }
 
-    init(style: GSTextStyle, string: String) {
+    public init(style: GSTextStyle, string: String) {
         self.style = style
         self.string = string
     }
