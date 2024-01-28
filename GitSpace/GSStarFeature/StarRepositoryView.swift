@@ -74,5 +74,7 @@ struct StarRepositoryView: View {
 }
 
 #Preview {
-    StarRepositoryView()
+    NavigationStack {
+        StarRepositoryView()
+    }
 }
