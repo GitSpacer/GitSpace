@@ -13,6 +13,8 @@
 		68C7A5222B64BD3E00569712 /* GSStarFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C7A51C2B64BD3E00569712 /* GSStarFeature.framework */; };
 		68C7A5232B64BD3E00569712 /* GSStarFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68C7A51C2B64BD3E00569712 /* GSStarFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		68C7A5282B64BE2600569712 /* StarRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C7A5272B64BE2600569712 /* StarRepositoryView.swift */; };
+		68EA62B62B662C590001BC09 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EA62B52B662C590001BC09 /* StarView.swift */; };
+		68EA62B82B6633B90001BC09 /* TaggingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EA62B72B6633B90001BC09 /* TaggingView.swift */; };
 		6E15595A2ACEFFCA003972BD /* GSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1559592ACEFFCA003972BD /* GSButton.swift */; };
 		6E61F9332AD81A48001C7FF3 /* GSCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E61F9322AD81A48001C7FF3 /* GSCanvas.swift */; };
 		6E61F9352AD81CC6001C7FF3 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E61F9342AD81CC6001C7FF3 /* Color+.swift */; };
@@ -101,6 +103,8 @@
 		68C7A51C2B64BD3E00569712 /* GSStarFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GSStarFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68C7A51E2B64BD3E00569712 /* GSStarFeature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSStarFeature.h; sourceTree = "<group>"; };
 		68C7A5272B64BE2600569712 /* StarRepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRepositoryView.swift; sourceTree = "<group>"; };
+		68EA62B52B662C590001BC09 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		68EA62B72B6633B90001BC09 /* TaggingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaggingView.swift; sourceTree = "<group>"; };
 		6E1559592ACEFFCA003972BD /* GSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSButton.swift; sourceTree = "<group>"; };
 		6E61F9322AD81A48001C7FF3 /* GSCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSCanvas.swift; sourceTree = "<group>"; };
 		6E61F9342AD81CC6001C7FF3 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
@@ -162,7 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				68C7A51E2B64BD3E00569712 /* GSStarFeature.h */,
+				68EA62B52B662C590001BC09 /* StarView.swift */,
 				68C7A5272B64BE2600569712 /* StarRepositoryView.swift */,
+				68EA62B72B6633B90001BC09 /* TaggingView.swift */,
 			);
 			path = GSStarFeature;
 			sourceTree = "<group>";
@@ -491,7 +497,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68EA62B62B662C590001BC09 /* StarView.swift in Sources */,
 				68C7A5282B64BE2600569712 /* StarRepositoryView.swift in Sources */,
+				68EA62B82B6633B90001BC09 /* TaggingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
