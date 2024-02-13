@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2246C8362B7B46DB006F79E1 /* GitHubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246C8352B7B46DB006F79E1 /* GitHubError.swift */; };
 		2246C83A2B7B4F04006F79E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2246C8392B7B4F04006F79E1 /* GoogleService-Info.plist */; };
+		224A8FF12B7BBFB800C003A4 /* HTTPRequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224A8FF02B7BBFB800C003A4 /* HTTPRequestMethod.swift */; };
 		22CDB98F2AD7C9F400F22ADA /* GSText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CDB98E2AD7C9F400F22ADA /* GSText.swift */; };
 		681C742D2AE1611200651D3E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 681C742C2AE1611200651D3E /* .swiftlint.yml */; };
 		6E15595A2ACEFFCA003972BD /* GSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1559592ACEFFCA003972BD /* GSButton.swift */; };
@@ -134,6 +135,7 @@
 /* Begin PBXFileReference section */
 		2246C8352B7B46DB006F79E1 /* GitHubError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubError.swift; sourceTree = "<group>"; };
 		2246C8392B7B4F04006F79E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		224A8FF02B7BBFB800C003A4 /* HTTPRequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestMethod.swift; sourceTree = "<group>"; };
 		22CDB98E2AD7C9F400F22ADA /* GSText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSText.swift; sourceTree = "<group>"; };
 		681C742C2AE1611200651D3E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		6E1559592ACEFFCA003972BD /* GSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSButton.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 		2246C8322B7B4137006F79E1 /* Enumeration */ = {
 			isa = PBXGroup;
 			children = (
+				224A8FF02B7BBFB800C003A4 /* HTTPRequestMethod.swift */,
 			);
 			path = Enumeration;
 			sourceTree = "<group>";
@@ -774,6 +777,7 @@
 				6EF1F4F02B58A1BF00CD247D /* FollowerResponse.swift in Sources */,
 				6EF1F4E92B58A1BF00CD247D /* Tag.swift in Sources */,
 				6EF1F4F12B58A1BF00CD247D /* FirestoreCollection.swift in Sources */,
+				224A8FF12B7BBFB800C003A4 /* HTTPRequestMethod.swift in Sources */,
 				6EF1F4EE2B58A1BF00CD247D /* RepositoryResponse.swift in Sources */,
 				6EF1F4F22B58A1BF00CD247D /* FollowingResponse.swift in Sources */,
 				6EF1F4F72B58A1BF00CD247D /* FirestoreError.swift in Sources */,
