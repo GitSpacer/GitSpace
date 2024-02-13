@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2246C8362B7B46DB006F79E1 /* GitHubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246C8352B7B46DB006F79E1 /* GitHubError.swift */; };
+		2246C83A2B7B4F04006F79E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2246C8392B7B4F04006F79E1 /* GoogleService-Info.plist */; };
 		22CDB98F2AD7C9F400F22ADA /* GSText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CDB98E2AD7C9F400F22ADA /* GSText.swift */; };
 		681C742D2AE1611200651D3E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 681C742C2AE1611200651D3E /* .swiftlint.yml */; };
 		6E15595A2ACEFFCA003972BD /* GSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1559592ACEFFCA003972BD /* GSButton.swift */; };
@@ -130,6 +132,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2246C8352B7B46DB006F79E1 /* GitHubError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubError.swift; sourceTree = "<group>"; };
+		2246C8392B7B4F04006F79E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22CDB98E2AD7C9F400F22ADA /* GSText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSText.swift; sourceTree = "<group>"; };
 		681C742C2AE1611200651D3E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		6E1559592ACEFFCA003972BD /* GSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSButton.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 		2246C8312B7B40F3006F79E1 /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				2246C8352B7B46DB006F79E1 /* GitHubError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				6E9AEBD82B62866700E10516 /* GoogleService-Info.plist */,
+				2246C8392B7B4F04006F79E1 /* GoogleService-Info.plist */,
 				7E65A94E2ACEEA3200C9BEA3 /* GitSpaceApp.swift */,
 				7E65A9502ACEEA3200C9BEA3 /* ContentView.swift */,
 				7E65A9522ACEEA3300C9BEA3 /* Assets.xcassets */,
@@ -702,6 +708,7 @@
 			files = (
 				681C742D2AE1611200651D3E /* .swiftlint.yml in Resources */,
 				6E9AEBD92B62866700E10516 /* GoogleService-Info.plist in Resources */,
+				2246C83A2B7B4F04006F79E1 /* GoogleService-Info.plist in Resources */,
 				7E65A9562ACEEA3300C9BEA3 /* Preview Assets.xcassets in Resources */,
 				7E65A9532ACEEA3300C9BEA3 /* Assets.xcassets in Resources */,
 			);
@@ -759,6 +766,7 @@
 				6EF1F4EA2B58A1BF00CD247D /* GithubUser.swift in Sources */,
 				6EF1F4E22B58A1BF00CD247D /* FirestoreFieldProtocol.swift in Sources */,
 				6EF1F4EB2B58A1BF00CD247D /* Repository.swift in Sources */,
+				2246C8362B7B46DB006F79E1 /* GitHubError.swift in Sources */,
 				6EF1F4F32B58A1BF00CD247D /* Knock.swift in Sources */,
 				6EF1F4E32B58A1BF00CD247D /* Chat.swift in Sources */,
 				6EF1F4F42B58A1BF00CD247D /* FirestoreField.swift in Sources */,
@@ -839,14 +847,16 @@
 		6EF1F4DC2B58A17300CD247D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 75QZ7682T2;
+				DEVELOPMENT_TEAM = QY2NR7SV42;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -877,14 +887,16 @@
 		6EF1F4DD2B58A17300CD247D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 75QZ7682T2;
+				DEVELOPMENT_TEAM = QY2NR7SV42;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1042,7 +1054,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GitSpace/Preview Content\"";
-				DEVELOPMENT_TEAM = 75QZ7682T2;
+				DEVELOPMENT_TEAM = QY2NR7SV42;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1072,7 +1084,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GitSpace/Preview Content\"";
-				DEVELOPMENT_TEAM = 75QZ7682T2;
+				DEVELOPMENT_TEAM = QY2NR7SV42;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1097,11 +1109,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 75QZ7682T2;
+				DEVELOPMENT_TEAM = QY2NR7SV42;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1133,11 +1145,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 75QZ7682T2;
+				DEVELOPMENT_TEAM = QY2NR7SV42;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1172,7 +1184,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 75QZ7682T2;
+				DEVELOPMENT_TEAM = QY2NR7SV42;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1208,7 +1220,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 75QZ7682T2;
+				DEVELOPMENT_TEAM = QY2NR7SV42;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
