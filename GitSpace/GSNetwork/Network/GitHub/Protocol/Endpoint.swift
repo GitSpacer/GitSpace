@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol Endpoint {
+protocol Endpoint {
   var scheme: String { get }
   var host: String { get }
   var path: String { get }
