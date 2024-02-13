@@ -225,9 +225,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2246C8302B7B40E6006F79E1 /* GitHub */ = {
+			isa = PBXGroup;
+			children = (
+				2246C8342B7B415D006F79E1 /* Implementation */,
+				2246C8332B7B4153006F79E1 /* Protocol */,
+				2246C8322B7B4137006F79E1 /* Enumeration */,
+				2246C8312B7B40F3006F79E1 /* Error */,
+			);
+			path = GitHub;
+			sourceTree = "<group>";
+		};
+		2246C8312B7B40F3006F79E1 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		2246C8322B7B4137006F79E1 /* Enumeration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enumeration;
+			sourceTree = "<group>";
+		};
+		2246C8332B7B4153006F79E1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		2246C8342B7B415D006F79E1 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
 		6E1E7FEF2B4E5DFD00655B04 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				2246C8302B7B40E6006F79E1 /* GitHub */,
 				6EF97FDC2B4E7764007C7932 /* Firestore */,
 			);
 			path = Network;
