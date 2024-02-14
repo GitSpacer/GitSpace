@@ -12,6 +12,7 @@
 		224A8FF12B7BBFB800C003A4 /* HTTPRequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224A8FF02B7BBFB800C003A4 /* HTTPRequestMethod.swift */; };
 		224A8FF32B7BC0E900C003A4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224A8FF22B7BC0E900C003A4 /* Endpoint.swift */; };
 		224A8FF52B7BC2A600C003A4 /* GitHubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224A8FF42B7BC2A600C003A4 /* GitHubEndpoint.swift */; };
+		224A8FF72B7C9EB200C003A4 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224A8FF62B7C9EB200C003A4 /* HTTPClient.swift */; };
 		22CDB98F2AD7C9F400F22ADA /* GSText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CDB98E2AD7C9F400F22ADA /* GSText.swift */; };
 		681C742D2AE1611200651D3E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 681C742C2AE1611200651D3E /* .swiftlint.yml */; };
 		6E15595A2ACEFFCA003972BD /* GSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1559592ACEFFCA003972BD /* GSButton.swift */; };
@@ -140,6 +141,7 @@
 		224A8FF02B7BBFB800C003A4 /* HTTPRequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestMethod.swift; sourceTree = "<group>"; };
 		224A8FF22B7BC0E900C003A4 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		224A8FF42B7BC2A600C003A4 /* GitHubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubEndpoint.swift; sourceTree = "<group>"; };
+		224A8FF62B7C9EB200C003A4 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		22CDB98E2AD7C9F400F22ADA /* GSText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSText.swift; sourceTree = "<group>"; };
 		681C742C2AE1611200651D3E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		6E1559592ACEFFCA003972BD /* GSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSButton.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				224A8FF22B7BC0E900C003A4 /* Endpoint.swift */,
+				224A8FF62B7C9EB200C003A4 /* HTTPClient.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -776,6 +779,7 @@
 				6EF1F4EA2B58A1BF00CD247D /* GithubUser.swift in Sources */,
 				6EF1F4E22B58A1BF00CD247D /* FirestoreFieldProtocol.swift in Sources */,
 				6EF1F4EB2B58A1BF00CD247D /* Repository.swift in Sources */,
+				224A8FF72B7C9EB200C003A4 /* HTTPClient.swift in Sources */,
 				2246C8362B7B46DB006F79E1 /* GitHubError.swift in Sources */,
 				6EF1F4F32B58A1BF00CD247D /* Knock.swift in Sources */,
 				6EF1F4E32B58A1BF00CD247D /* Chat.swift in Sources */,
