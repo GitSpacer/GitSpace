@@ -18,6 +18,8 @@
 		6E7E3BF92AD35A7700152EAE /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7E3BF82AD35A7700152EAE /* FirebaseMessaging */; };
 		6E9AEBD92B62866700E10516 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E9AEBD82B62866700E10516 /* GoogleService-Info.plist */; };
 		6E9AEBDA2B62866700E10516 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E9AEBD82B62866700E10516 /* GoogleService-Info.plist */; };
+		6EE8AEF82B8CBDAC004162F3 /* GSUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A96B2ACEEB7600C9BEA3 /* GSUtilities.framework */; };
+		6EE8AEF92B8CBDAC004162F3 /* GSUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E65A96B2ACEEB7600C9BEA3 /* GSUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6EF1F4992B57CF0100CD247D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF1F4982B57CF0100CD247D /* FirebaseFirestore */; };
 		6EF1F49B2B57CF0100CD247D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF1F49A2B57CF0100CD247D /* FirebaseFirestoreSwift */; };
 		6EF1F4CA2B57F12C00CD247D /* GSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1F4C92B57F12C00CD247D /* GSError.swift */; };
@@ -72,6 +74,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6EE8AEFA2B8CBDAC004162F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E65A9432ACEEA3200C9BEA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E65A96A2ACEEB7600C9BEA3;
+			remoteInfo = GSUtilities;
+		};
 		6EF1F4D82B58A17300CD247D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7E65A9432ACEEA3200C9BEA3 /* Project object */;
@@ -103,6 +112,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		6EE8AEFC2B8CBDAC004162F3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6EE8AEF92B8CBDAC004162F3 /* GSUtilities.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6EF1F5112B58A41B00CD247D /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,6 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EE8AEF82B8CBDAC004162F3 /* GSUtilities.framework in Frameworks */,
 				6EF1F5082B58A36500CD247D /* FirebaseFirestore in Frameworks */,
 				6EF1F50A2B58A36500CD247D /* FirebaseFirestoreSwift in Frameworks */,
 			);
@@ -582,10 +603,12 @@
 				7E65A97B2ACEECC000C9BEA3 /* Sources */,
 				7E65A97C2ACEECC000C9BEA3 /* Frameworks */,
 				7E65A97D2ACEECC000C9BEA3 /* Resources */,
+				6EE8AEFC2B8CBDAC004162F3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6EE8AEFB2B8CBDAC004162F3 /* PBXTargetDependency */,
 			);
 			name = GSDesignSystem;
 			packageProductDependencies = (
@@ -773,6 +796,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6EE8AEFB2B8CBDAC004162F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E65A96A2ACEEB7600C9BEA3 /* GSUtilities */;
+			targetProxy = 6EE8AEFA2B8CBDAC004162F3 /* PBXContainerItemProxy */;
+		};
 		6EF1F4D92B58A17300CD247D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6EF1F4D32B58A17300CD247D /* GSNetwork */;
