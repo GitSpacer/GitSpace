@@ -1,6 +1,6 @@
 import FirebaseFirestore
 
-extension Query {
+public extension Query {
   
   typealias FirestoreField = any FirestoreFieldProtocol
   
@@ -37,6 +37,13 @@ extension Query {
         return self.order(by: field.name, descending: type == .descending)
     }
   }
+  
+  func fetch<T: GSModel>() async throws -> [T] {
+    
+    let documents = try await self.getDocuments().documents
+    
+    let modelArray: [T] = try documents.map { try $0.data(as: T.self) }
+    
+    return modelArray
+  }
 }
-
-
