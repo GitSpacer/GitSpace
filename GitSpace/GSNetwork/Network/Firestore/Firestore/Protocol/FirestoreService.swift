@@ -4,6 +4,29 @@ public protocol FirestoreService {
   
   typealias WhereField = (field: any FirestoreFieldProtocol, operation: FirestoreQueryOperation)
   
+  /// 지정한 컬렉션의 경로를 반환합니다.
+  /// - Parameter from collection: 경로를 검색할 Firestore 컬렉션입니다.
+  /// - Returns: 지정된 컬렉션에 대한 CollectionReference를 반환합니다.
+  /// - Author: 원태영
+  func getCollectionPath(
+    from collection: FirestoreCollection
+  ) -> CollectionReference
+  
+  
+  /// 지정한 컬렉션의 하위 컬렉션 경로를 반환합니다.
+  /// - Parameters:
+  ///   - superCol superCollection: 상위 컬렉션입니다.
+  ///   - superDoc superDocumentID: 상위 문서의 ID입니다.
+  ///   - from subCollection: 하위 컬렉션입니다.
+  /// - Returns: 하위 컬렉션에 대한 CollectionReference를 반환합니다.
+  /// - Author: 원태영
+  func getCollectionPath(
+    superCol superCollection: FirestoreCollection,
+    superDoc superDocumentID: String,
+    from subCollection: FirestoreCollection
+  ) -> CollectionReference
+  
+  
   /// 지정된 컬렉션에 모델을 생성합니다.
   /// - Parameters:
   ///   - in collection: 모델을 생성할 컬렉션입니다.
@@ -38,14 +61,15 @@ public protocol FirestoreService {
   
   
   /// 지정된 컬렉션에서 특정 조건을 만족하는 모든 문서를 조회합니다.
+  /// - 단일 쿼리일 때 사용합니다. 복합 쿼리를 사용하시려면 getCollectionPath로 컬렉션 경로를 설정하고, .query 체이닝으로 원하는 조건을 설정한 뒤 .fetch를 호출해주세요.
   /// - Parameters:
   ///   - from colRef: 조회할 컬렉션입니다.
-  ///   - where query: 검사할 필드와 조건 오퍼레이션이 포함된 튜플 배열입니다.
+  ///   - where query: 검사할 필드와 조건 오퍼레이션이 포함된 튜플입니다..
   /// - Returns: 조건을 만족하는 모든 모델을 포함하는 배열을 반환합니다.
   /// - Author: 원태영
   func fetch<T: GSModel>(
     from collection: FirestoreCollection,
-    where query: [WhereField]
+    where query: WhereField
   ) async throws -> [T]
   
   
